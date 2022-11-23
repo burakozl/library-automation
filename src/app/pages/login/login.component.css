@@ -140,6 +140,10 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
   text-align:center;
 }
+.alert{
+  border-radius: 50px;
+  font-size: 12px;
+}
 @media (max-width: 525px) {
   .login-wrap{
     height: 100vh;

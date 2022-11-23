@@ -3,40 +3,106 @@
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Giriş Yap</label>
     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Kayıt Ol</label>
     <div class="login-form">
+      <!-- Giriş Yap -->
       <div class="sign-in-htm">
-        <div class="group">
-          <label for="email" class="label">Email</label>
-          <input id="email" type="email" class="input">
-        </div>
-        <div class="group">
-          <label for="pass" class="label">Şifre</label>
-          <input id="pass" type="password" class="input" data-type="password">
-        </div>
-        <div class="group">
-          <input type="submit" class="button" value="Giriş Yap">
-        </div>
+        <form [formGroup]="loginForm">
+          <div class="group">
+            <label for="loginEmail" class="label">Email</label>
+            <input formControlName="email" id="loginEmail" type="email" class="input">
+            <div *ngIf="
+                loginForm.get('email')?.hasError('required') &&
+                (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)
+              " class="alert alert-danger" role="alert">
+              Email alanı zorunludur...
+            </div>
+            <div *ngIf="
+                loginForm.get('email')?.hasError('email') &&
+                (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)
+              " class="alert alert-danger" role="alert">
+              Email ornek@ornek.com formatında olmalıdır...
+            </div>
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Şifre</label>
+            <input formControlName="password" id="pass" type="password" class="input" data-type="password">
+            <div *ngIf="
+                loginForm.get('password')?.hasError('required') &&
+                (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)
+              " class="alert alert-danger" role="alert">
+              Şifre zorunludur...
+            </div>
+            <div *ngIf="
+                loginForm.get('password')?.hasError('minlength') &&
+                (loginForm.dirty || loginForm.touched)
+              " class="alert alert-danger" role="alert">
+              Şifre en az 8 karakter olmalıdır...
+            </div>
+          </div>
+          <div class="group">
+            <input type="submit" class="button" (click)="login()" value="Giriş Yap">
+          </div>
+        </form>
         <div class="hr"></div>
       </div>
+      <!-- Kayıt ol -->
       <div class="sign-up-htm">
-        <div class="group">
-          <label for="name" class="label">İsim</label>
-          <input id="name" type="text" class="input">
-        </div>
-        <div class="group">
-          <label for="surname" class="label">Soyisim</label>
-          <input id="surname" type="text" class="input">
-        </div>
-        <div class="group">
-          <label for="email" class="label">Email</label>
-          <input id="email" type="text" class="input">
-        </div>
-        <div class="group">
-          <label for="pass" class="label">Şifre</label>
-          <input id="pass" type="password" class="input" data-type="password">
-        </div>
-        <div class="group">
-          <input type="submit" class="button" value="Kayıt Ol">
-        </div>
+        <form [formGroup]="registerForm">
+          <div class="group">
+            <label for="name" class="label">İsim</label>
+            <input formControlName="name" id="name" type="text" class="input">
+            <div *ngIf="
+                registerForm.get('name')?.hasError('required') &&
+                (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)
+              " class="alert alert-danger" role="alert">
+              İsim alanı zorunludur...
+            </div>
+          </div>
+          <div class="group">
+            <label for="surname" class="label">Soyisim</label>
+            <input formControlName="surname" id="surname" type="text" class="input">
+            <div *ngIf="
+                registerForm.get('surname')?.hasError('required') &&
+                (registerForm.controls['surname'].dirty || registerForm.controls['surname'].touched)
+              " class="alert alert-danger" role="alert">
+              Soyisim alanı zorunludur...
+            </div>
+          </div>
+          <div class="group">
+            <label for="registerEmail" class="label">Email</label>
+            <input formControlName="email" id="registerEmail" type="text" class="input">
+            <div *ngIf="
+                registerForm.get('email')?.hasError('required') &&
+                (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)
+              " class="alert alert-danger" role="alert">
+              Email alanı zorunludur...
+            </div>
+            <div *ngIf="
+                registerForm.get('email')?.hasError('email') &&
+                (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)
+              " class="alert alert-danger" role="alert">
+              Email ornek@ornek.com formatında olmalıdır...
+            </div>
+          </div>
+          <div class="group">
+            <label for="registerpassword" class="label">Şifre</label>
+            <input formControlName="password" id="registerpassword" type="password" class="input" data-type="password">
+            <div *ngIf="
+                registerForm.get('password')?.hasError('required') &&
+                (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)
+              " class="alert alert-danger" role="alert">
+              Şifre zorunludur...
+            </div>
+            <div *ngIf="
+                registerForm.get('password')?.hasError('minlength') &&
+                (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)
+              " class="alert alert-danger" role="alert">
+              Şifre en az 8 karakter olmalıdır...
+            </div>
+          </div>
+          <div class="group">
+            <input type="submit" class="button" (click)="register()" value="Kayıt Ol">
+          </div>
+        </form>
         <div class="hr"></div>
       </div>
     </div>
