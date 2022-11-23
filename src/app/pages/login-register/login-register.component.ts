@@ -116,6 +116,12 @@ export class LoginRegisterComponent implements OnInit {
         this.usersService.createAccount(newUser).subscribe({//userService içersindeki createAccount metoduna ulaşılıp post işlemi yapılır..
           next: (res) => {//kullanıcıya işlem başarılı bilgisi göster...
             this.toastr.success(`Hoşgeldin ${res.name} ${res.surname}! Hesabın başarılı bir şekilde oluşturuldu...`);
+            this.saveSessionToStore(res);//kullanıcı bilgileri store'a kaydedilecek...
+              if(res.userRole === "admin"){ //userrole'e göre admin panel yada home yönlendir.
+                this.router.navigateByUrl('/admin-panel');
+              }else{
+                this.router.navigateByUrl('/home');
+              }
           },
           error: (err) => {//hata varsa consola bas...
             console.log(err);
