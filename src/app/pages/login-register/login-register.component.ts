@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-login-register',
@@ -10,14 +14,25 @@ export class LoginRegisterComponent implements OnInit {
 
   loginForm!: FormGroup; //kullanıcı girişi için oluşturulacak formgroup
   registerForm!: FormGroup;//kullanıcı kaydı için oluşturulacak formgroup
+  users!:User[];//jsondan çekilecek tüm userslar burada tutulacak...
 
   constructor(
     private formBuilder:FormBuilder,//angular form oluşturmak için ilgili servis
+    private usersService:UsersService,// user httpreq. işlemleri için oluşturulan servis..
+    private router:Router,
+    private toastr:ToastrService
   ) { }
 
   ngOnInit(): void {
+    this.getAllUsers();//userservis'e ulaşıp get isteğiyle dataları çekicek metot
     this.createLoginForm();//loginformu oluşturulacak metot sayfa ilk yüklendiğinde onInit içinde çağrılır...
     this.createRegisterForm();//registerformu oluşturulacak metot sayfa ilk yüklendiğinde onInit içinde çağrılır...
+  }
+
+  getAllUsers() {
+    this.usersService.getUsers().subscribe((res) => {
+      this.users = res;//dönen response'u users'a atıyoruz.
+    });
   }
 
   createLoginForm() {
@@ -36,12 +51,65 @@ export class LoginRegisterComponent implements OnInit {
     });
   }
 
+//Giriş İşlemleri
   login(){
-    console.log(this.loginForm.value);
+    if(!this.loginForm.valid){//form invalid ise toastr ile kullanıcıya hata göster
+      this.toastr.error('Tüm zorunlu alanları doldurduğunuzdan emin olun...', 'Sistem mesajı :');
+    }else{
+      this.usersService.getUser(this.loginForm.value.email).subscribe({//userservice'den queryparams ile girilen maili içeren datayı get eder...
+        next: (res) => {
+          if(res.length === 0){//data yoksa length sıfır gelir.. hata göster..
+            this.toastr.error("Böyle bir hesap bulunamadı...","Sistem mesajı");
+          }else{//ilgili data varsa
+            if(res[0].password == this.loginForm.value.password){//girilen şifre get edilen data'nın şifresi ile aynı mı?
+              this.toastr.success("Başarılı bir şekilde giriş yapıldı...");
+              console.log(res);
+              //Todo:userrole'e göre admin panel yada home yönlendir.
+            }else{
+              this.toastr.error("Email yada şifre hatalı...","Sistem mesajı");
+            }
+          }
+        },
+        error: (err) => {
+          console.log(err);//hata varsa consola bas
+        }
+      })
+    }
   }
-  register(){
-    console.log(this.registerForm.value);
 
+  //Kayıt işlemleri
+  register(){
+    if(!this.registerForm.valid){//form invalid ise toastr ile kullanıcıya hata göster
+      this.toastr.error('Form alanının tamamen doldurulduğundan emin olun', 'Sistem mesajı :');
+    }else{
+      let isUsedEmail:boolean = false; //girilen email'i kontrol etmek için oluşturulan değişken
+
+      this.users.forEach((user:{email:string}) => {//tüm user datası gezilerek girilen emailin kontrolü yapılır
+        if(this.registerForm.value.email === user.email){//eşleşen data varsa
+          isUsedEmail = true;//oluşturulan değişken değeri true...
+        }
+      });
+
+      if(isUsedEmail){//girilen email zaten varsa hata...
+        this.toastr.error("Girmiş olduğunuz email zaten kayıtlı...","Sistem Mesajı:");
+      }else{//mail users içersinde bulunmuyorsa kayıt işlemi yapılabilir...
+        const newUser: User = {//register form değerleri oluşturulan obje içersine atanır...
+          ...this.registerForm.value,
+          userRole: "user"
+        }
+        this.usersService.createAccount(newUser).subscribe({//userService içersindeki createAccount metoduna ulaşılıp post işlemi yapılır..
+          next: (res) => {//kullanıcıya işlem başarılı bilgisi göster...
+            this.toastr.success(`Hoşgeldin ${res.name} ${res.surname}! Hesabın başarılı bir şekilde oluşturuldu...`);
+          },
+          error: (err) => {//hata varsa consola bas...
+            console.log(err);
+          },
+          complete: () => {//işlem tamamlandığında login sayfasına yönlendir..
+            //Todo:formu temizle login tabı aç
+          }
+        });
+      }
+    }
   }
 
 }
