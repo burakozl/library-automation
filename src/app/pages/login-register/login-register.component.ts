@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
+import { SessionStatusService } from 'src/app/services/session-status.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class LoginRegisterComponent implements OnInit {
     private formBuilder:FormBuilder,//angular form oluşturmak için ilgili servis
     private usersService:UsersService,// user httpreq. işlemleri için oluşturulan servis..
     private router:Router,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private sessionStatusService:SessionStatusService
   ) { }
 
   ngOnInit(): void {
@@ -63,8 +65,12 @@ export class LoginRegisterComponent implements OnInit {
           }else{//ilgili data varsa
             if(res[0].password == this.loginForm.value.password){//girilen şifre get edilen data'nın şifresi ile aynı mı?
               this.toastr.success("Başarılı bir şekilde giriş yapıldı...");
-              console.log(res);
-              //Todo:userrole'e göre admin panel yada home yönlendir.
+              this.saveSessionToStore(res[0]);//kullanıcı bilgileri store'a kaydedilecek...
+              if(res[0].userRole === "admin"){ //userrole'e göre admin panel yada home yönlendir.
+                this.router.navigateByUrl('/admin-panel');
+              }else{
+                this.router.navigateByUrl('/home');
+              }
             }else{
               this.toastr.error("Email yada şifre hatalı...","Sistem mesajı");
             }
@@ -77,10 +83,20 @@ export class LoginRegisterComponent implements OnInit {
     }
   }
 
+  saveSessionToStore(data:User){
+    const sessionInfo = {
+      name: data.name,
+      surname: data.surname,
+      userRole: data.userRole,
+      isLogin:true
+    };
+    this.sessionStatusService.saveSessionToStore(sessionInfo);
+  }
+
   //Kayıt işlemleri
   register(){
     if(!this.registerForm.valid){//form invalid ise toastr ile kullanıcıya hata göster
-      this.toastr.error('Form alanının tamamen doldurulduğundan emin olun', 'Sistem mesajı :');
+      this.toastr.error('Tüm zorunlu alanları doldurduğunuzdan emin olun...', 'Sistem mesajı :');
     }else{
       let isUsedEmail:boolean = false; //girilen email'i kontrol etmek için oluşturulan değişken
 
@@ -104,8 +120,8 @@ export class LoginRegisterComponent implements OnInit {
           error: (err) => {//hata varsa consola bas...
             console.log(err);
           },
-          complete: () => {//işlem tamamlandığında login sayfasına yönlendir..
-            //Todo:formu temizle login tabı aç
+          complete: () => {
+            this.registerForm.reset();
           }
         });
       }

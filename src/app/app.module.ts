@@ -10,6 +10,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
+import { StoreModule } from '@ngrx/store';
+import { AppStoreState } from './store/app.state';
+import { appReducers } from './store/app.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
     ToastrModule.forRoot(
       {positionClass: 'toast-top-right'},
     ),
+    StoreModule.forRoot<AppStoreState>(appReducers),
+    StoreDevtoolsModule.instrument({
+      autoPause: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
