@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-register',
+  templateUrl: './login-register.component.html',
+  styleUrls: ['./login-register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginRegisterComponent implements OnInit {
 
   loginForm!: FormGroup; //kullanıcı girişi için oluşturulacak formgroup
   registerForm!: FormGroup;//kullanıcı kaydı için oluşturulacak formgroup
