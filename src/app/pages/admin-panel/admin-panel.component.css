@@ -1,0 +1,19 @@
+body{
+  background: white !important;
+}
+.table.table-bordered th {
+  text-align: center;
+}
+table.table td a.edit {
+	color: #FFC107;
+}
+table.table td a.delete {
+	color: #F44336;
+}
+table.table td i {
+	font-size: 25px;
+}
+/* tbody tr:nth-child(odd){
+  background-color: #4C8BF5;
+  color: #fff;
+} */

@@ -31,19 +31,107 @@
       "barcodeNumber": 856987421,
       "bookName": "Sefiller",
       "author": "Victor Hugo",
-      "description": "Yoksul bir köylü çocuğu olan Jan Valjan, küçük yaşta annesini ve babasını kaybetti. Gidecek başka yeri olmadığı için yedi çocukla dul kalan ablasının yanına gitti. Yetim kalan çocuklara babalık, ablasına da yardım etti. Aradan geçen yıllar onu içine kapalı, sessiz, ama güçlü kuvvetli bir delikanlı yapmıştı. Çektiği sıkıntıdan yakınmıyor, yalnızca ablasının ve yedi çocuğunun karnını nasıl doyuracağını düşünüyordu. Bu hiç de kolay değildi maalesef...Jan Valjan''ın elinden her iş gelirdi. Yarıcılık, orakçılık, yanaşmalık ve bağ budayıcılığı... Ama bu işler de her zaman bulunamıyor, işsiz kaldığı zamanlar da oluyordu... Jan Valjan, kışın çok soğuk geçtiği ve kıtlık olduğu o yıl da işsiz kaldı. Kendini düşünmüyordu ama evde bir lokma ekmek bekleyen aç yedi çocuk vardı. Karınlarını doyurabilmek için hiçbir çare bulamayınca sonunda bir fırından ekmek çalmak zorunda kaldı.",
+      "aboutTheBook": "Yoksul bir köylü çocuğu olan Jan Valjan, küçük yaşta annesini ve babasını kaybetti. Gidecek başka yeri olmadığı için yedi çocukla dul kalan ablasının yanına gitti. Yetim kalan çocuklara babalık, ablasına da yardım etti. Aradan geçen yıllar onu içine kapalı, sessiz, ama güçlü kuvvetli bir delikanlı yapmıştı. Çektiği sıkıntıdan yakınmıyor, yalnızca ablasının ve yedi çocuğunun karnını nasıl doyuracağını düşünüyordu. Bu hiç de kolay değildi maalesef...Jan Valjan''ın elinden her iş gelirdi. Yarıcılık, orakçılık, yanaşmalık ve bağ budayıcılığı... Ama bu işler de her zaman bulunamıyor, işsiz kaldığı zamanlar da oluyordu... Jan Valjan, kışın çok soğuk geçtiği ve kıtlık olduğu o yıl da işsiz kaldı. Kendini düşünmüyordu ama evde bir lokma ekmek bekleyen aç yedi çocuk vardı. Karınlarını doyurabilmek için hiçbir çare bulamayınca sonunda bir fırından ekmek çalmak zorunda kaldı.",
       "shelfNumber": 1,
-      "category": "novel",
+      "category": "Roman",
       "imageId": 1
+    },
+    {
+      "bookName": "Suç Ve Ceza",
+      "author": "Fyodor Mihailoviç Dostoyevski",
+      "aboutTheBook": "Yüce bir amaca hizmet eden suç, aslında suç değil midir? Bu soruyu merkeze alan Suç ve Ceza, dünyanın en önemli yazarları arasında olduğu tartışma götürmeyen Dostoyevski’nin en yetkin eserlerinden biri. Türkiye İş Bankası Kültür Yayınları bu başyapıtı Hasan Al Yücel Klasikler Dizisinin 45. kitabı olarak yeniden okurların ilgisine sunuyor. Eser alt dizi olarak da F.M. Dostoyevski – Bütün Eserleri serisinin de ilk kitabı olma özelliğini taşıyor.",
+      "barcodeNumber": 6433502449,
+      "shelfNumber": "2",
+      "category": "Roman",
+      "imageId": "2",
+      "id": 2
+    },
+    {
+      "bookName": "Savaş Ve Barış",
+      "author": "Lev Nikolayeviç Tolstoy",
+      "aboutTheBook": "Lev Nikolayeviç Tolstoy (1828-1910): Anna Karenina, Kreutzer Sonat ve Diriliş’in büyük yazarı Tolstoy, yaşamının son otuz yılında kendini insan, aile, din, devlet, toplum",
+      "barcodeNumber": 4866416794,
+      "shelfNumber": "3",
+      "category": "Roman",
+      "imageId": "3",
+      "id": 3
+    },
+    {
+      "bookName": "İki Dünya Arasında",
+      "author": "Julia Sena Yamanoğlu",
+      "aboutTheBook": "İnsan doğduğu, büyüdüğü, yaşadığı yere yabancılaşır bazen. Başka bir yerdenmiş ve hatta başka biriymiş gibi olur. En çok gitmek ister öyle zamanlarda, uzaklaşmak ve hatta belki de kaçmak ister.\nÇoğu cesaret edemez buna. Peki ya cesaret edebilsen? Karanlıktan çıksan aydınlığa? Gönlünü bir kelepçe gibi saran her şeyden kurtulsan? İnanmak denen su serpilse ateşinin üzerine?\nİşte şimdi bu kitap bize Batı’nın karanlığında uyuyup İslam’ın aydınlığına uyanan ve belki de mecburen “İki Dünya Arasında” kalmış bir kızın hissettiklerini anlatıyor. Bizim olduğumuz yerden bakıyor kendi dünyasına ve kendi doğduğu yerden bizi seyrediyor.\nİçini döküyor, dertleşiyor ve hatta ağlıyor sayfaların arasında…",
+      "barcodeNumber": 9658545328,
+      "shelfNumber": "4",
+      "category": "Roman",
+      "imageId": "4",
+      "id": 4
+    },
+    {
+      "bookName": "Simyacı",
+      "author": "Paulo Coelho",
+      "aboutTheBook": "1947 yılında Rio de Janeiro kentinde doğan Paulo Coelho, 1986 yılında Hac adlı ilk romanından sonra gelen Simyacı ile tüm dünyada üne kavuşuyor. 170 ülkede 80 dilde yayımlanan kitapları ile çok sayıda ödüle layık görülen yazar, Piedra Irmağı'nın Kıyısında Oturdum Ağladım, Beşinci Dağ, Veronika Ölmek İstiyor, Şeytan ve Genç Kadın, Elif, Portobello Cadısı gibi birçok eseri ile ününü devam ettiriyor. Birleşmiş Milletler Elçisi ve Brezilya Edebiyat Akademisi üyesi olan Coelho, 1988 yılında yayımlanan Simyacı kitabı ile pek çok eleştirmen tarafından 20. yüzyılın fenomeni olarak adlandırılıyor. Simyacı, Can Yayınları tarafından ilk kez 1996 yılında basılarak Türk okurlarıyla buluşuyor. Orijinal dili İspanyolca olan kitap, Özdemir İnce'nin çevirisi ile aktarılıyor.\n\nKendi hayallerine sıkı sıkıya tutunan Santiago, anne ve babası tarafından din adamı olması için papaz okuluna gönderiliyor. Ancak küçüklüğünden beri dünyayı tanımayı hayal eden Santiago, bir akşam cesaretini toplayıp babasına rahip olmak istemediğini ve dünyayı gezmek istediğini söylüyor. Babası, dünyanın bütün insanlarının köylerinden gelip geçtiğini, hepsinin köyün insanlarına benzediğini söylese de, Santiago o insanların geldikleri yerleri tanımak istediği konusunda ısrar ediyor. Baba, ertesi gün oğluna içinde üç adet İspanyol altını olan bir kese uzatarak bununla bir sürü almasını, en iyisinin kendi şatoları ve en güzel kadınların kendi kadınları olduğunu anlayana dek dünyayı dolaşmasını söylüyor. Babası tarafından kutsanan Santiago, hayalinin peşine böylece takılıyor.",
+      "barcodeNumber": 2139856874,
+      "shelfNumber": "5",
+      "category": "Roman",
+      "imageId": "5",
+      "id": 5
+    },
+    {
+      "bookName": "Kırmızı Pelerin",
+      "author": "Dr. Gülseren Budayıcıoğlu",
+      "aboutTheBook": "Zamanında zihnimize yazılanlar, sonradan kaderimizi yazar…\nAçık kapıdan kırmızı pelerinli bir kız giriyor içeri. Bir filmden, bir masaldan kopup gelivermiş gibi hali var. Sabah ezanı okunurken, gün daha tam doğmamış, etraf henüz tam aydınlanmamışken insanın içine bir ürperti gelir ya, ona benzer bir duygu içimi yalayıp geçiyor. Hayalet gibi…",
+      "barcodeNumber": 5429295718,
+      "shelfNumber": "6",
+      "category": "Roman",
+      "imageId": "6",
+      "id": 6
+    },
+    {
+      "bookName": "Romeo ve Juliet",
+      "author": "William Shakespeare",
+      "aboutTheBook": "Oyunları ve şiirlerinde insanlık durumlarını dile getiriş gücüyle yaklaşık 400 yıldır bütün dünya okur ve seyircilerini etkilemeyi sürdüren efsanevi yazar, Romeo ve Juliet’de birbirinden farklı pek çok toplumda benzerleriyle karşılaşılan trajik bir ilişkiyi, düşman ailelerin çocukları arasında doğan aşkı ele alır. Romeo ile Juliet’in umutsuz aşkını romantik örgüsünün yarı karanlık örtüsüyle sarmalayan eser, buna rağmen insan ilişkilerini gerçekçi bir anlayışla gözler önüne serer.",
+      "barcodeNumber": 3419295717,
+      "shelfNumber": "7",
+      "category": "Roman",
+      "imageId": "7",
+      "id": 7
+    },
+    {
+      "bookName": "Kürk Mantolu Madonna",
+      "author": "Sabahattin Ali ",
+      "aboutTheBook": "\"Her gün, daima öğleden sonra oraya gidiyor, koridorlardaki resimlere bakıyormuş gibi ağır ağır, fakat büyük bir sabırsızlıkla asıl hedefine varmak isteyen adımlarımı zorla zapt ederek geziniyor, rastgele gözüme çarpmış gibi önünde durduğum \"Kürk Mantolu Madonna\"yı seyre dalıyor, ta kapılar kapanıncaya kadar orada bekliyordum.\" Kimi tutkular rehberimiz olur yaşam boyunca. Kollarıyla bizi sarar. Sorgulamadan peşlerinden gideriz ve hiç pişman olmayacağımızı biliriz. Yapıtlarında insanların görünmeyen yüzlerini ortaya çıkaran Sabahattin Ali, bu kitabında güçlü bir tutkunun resmini çiziyor. Düzenin sildiği kişiliklere, yaşamın uçuculuğuna ve aşkın olanaksızlığına (?) dair, yanıtlanması zor sorular soruyor.",
+      "barcodeNumber": 4431276519,
+      "shelfNumber": "8",
+      "category": "Roman",
+      "imageId": "8",
+      "id": 8
     }
   ],
   "lendBooks": [
     {
       "id": 1,
-      "user_email": "burak@ozel.com",
+      "user_email": "ali@toplu.com",
       "book_barcodeNumber": 856987421,
       "dateOfLend": "02.11.2022",
-      "lender": "burak"
+      "lender": "burak",
+      "borrower": "ali"
+    }
+  ],
+  "image-upload": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
     }
   ]
 }

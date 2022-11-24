@@ -1,1 +1,55 @@
-<p>admin-panel works!</p>
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="py-3 text-center font-bold font-up">Kitap Listesi</h2>
+        </div>
+      </div>
+
+      <table class="table">
+        <thead style="background-color: #333; color: white;">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Barkod No</th>
+            <th scope="col">Kitap Adı</th>
+            <th scope="col">Yazar</th>
+            <th scope="col">Kitap Özet</th>
+            <th scope="col">Raf No</th>
+            <th scope="col">Kategori</th>
+            <th scope="col">
+              <a routerLink="/add-book" class="btn btn-success" data-toggle="modal">
+                <div class="d-flex align-items-center">
+                  <i class="material-icons mx-1">&#xE147;</i>
+                  <span>Kitap Ekle</span>
+                </div>
+              </a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books | slice: (page-1) * pageSize : page * pageSize">
+            <th scope="row">{{book.id}}</th>
+            <td>{{book.barcodeNumber}}</td>
+            <td>{{book.bookName}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.aboutTheBook | slice:0:40}}...
+            </td>
+            <td>{{book.shelfNumber}}</td>
+            <td>{{book.category}}</td>
+            <td>
+              <a routerLink="/edit" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                  title="Edit">&#xE254;</i></a>
+              <a routerLink="/delete" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
+                  title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center my-3">
+        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="books.length">
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+</div>

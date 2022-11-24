@@ -14,13 +14,16 @@ import { StoreModule } from '@ngrx/store';
 import { AppStoreState } from './store/app.state';
 import { appReducers } from './store/app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AddBookComponent } from './pages/admin-panel/add-book/add-book.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginRegisterComponent,
     HomeComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreDevtoolsModule.instrument({
       autoPause: false,
     }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

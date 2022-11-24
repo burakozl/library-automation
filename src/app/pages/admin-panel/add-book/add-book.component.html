@@ -1,0 +1,104 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="py-3 text-center font-bold font-up">Kitap Ekle</h2>
+        </div>
+      </div>
+      <form [formGroup]="addBookForm">
+        <div class="row">
+          <div class="col-12">
+            <div class="row mx-4">
+              <div class="col-12 mb-2">
+                <label class="order-form-label">Kitap Adı</label>
+              </div>
+              <div class="col-12 col-sm-6">
+                <input class="order-form-input" formControlName="bookName" placeholder="Kitap adı">
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('bookName')?.hasError('required') && addBookForm.controls['bookName'].touched">
+                    Kitap adı alanı zorunludur</small>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mt-2 mt-sm-0">
+                <input class="order-form-input" formControlName="author" placeholder="Yazar">
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('author')?.hasError('required') && addBookForm.controls['author'].touched">Yazar
+                    alanı zorunludur</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3 mx-4">
+              <div class="col-12">
+                <label class="order-form-label">Kitap Hakkında</label>
+              </div>
+              <div class="col-12">
+                <textarea class="order-form-input" formControlName="aboutTheBook"
+                  placeholder="Kitap hakkında"></textarea>
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('aboutTheBook')?.hasError('required') && addBookForm.controls['aboutTheBook'].touched">Kitap
+                    hakkında
+                    alanı zorunludur</small>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mt-2 pr-sm-2">
+                <input class="order-form-input" formControlName="barcodeNumber" type="number"
+                  placeholder="Barkod Numarası">
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('barcodeNumber')?.hasError('required') && addBookForm.controls['barcodeNumber'].touched">Barkod
+                    numarası
+                    alanı zorunludur</small>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 mt-2 pl-sm-0">
+                <input class="order-form-input" formControlName="shelfNumber" placeholder="Raf numarası">
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('shelfNumber')?.hasError('required') && addBookForm.controls['shelfNumber'].touched">Raf
+                    numarası
+                    alanı zorunludur</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mx-4">
+              <div class="col-12 mb-2">
+                <label class="order-form-label">Kategori</label>
+              </div>
+              <div class="col-12 col-sm-6">
+                <input class="order-form-input" formControlName="category" placeholder="Kategori">
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('category')?.hasError('required') && addBookForm.controls['category'].touched">
+                    Kategori alanı zorunludur</small>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <input class="order-form-input" formControlName="imageId" placeholder="imageID">
+                <div>
+                  <small
+                    *ngIf="addBookForm.get('imageId')?.hasError('required') && addBookForm.controls['imageId'].touched">image
+                    id
+                    alanı zorunludur</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-12">
+                <button type="button" id="btnSubmit" class="btn btn-success d-block mx-auto btn-submit"
+                  (click)="addBook()">Kitap
+                  Ekle</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
