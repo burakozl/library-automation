@@ -6,7 +6,7 @@
         <div class="row" *ngIf="categaryName === 'all'">
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books">
             <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
-              <a class="img-card">
+              <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
               </a>
               <div class="card-content">
@@ -18,7 +18,7 @@
                 </p>
               </div>
               <div class="card-detail">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" [routerLink]="'/book-detail/' + book.id">
                   detay
                 </button>
               </div>
@@ -28,7 +28,7 @@
         <div class="row" *ngIf="categaryName === 'novel'">
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of novelBooks">
             <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
-              <a class="img-card">
+              <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
               </a>
               <div class="card-content">
@@ -40,7 +40,7 @@
                 </p>
               </div>
               <div class="card-detail">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" [routerLink]="'/book-detail/' + book.id">
                   detay
                 </button>
               </div>
@@ -50,7 +50,7 @@
         <div class="row" *ngIf="categaryName === 'child'">
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of childBooks">
             <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
-              <a class="img-card">
+              <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
               </a>
               <div class="card-content">
@@ -62,7 +62,7 @@
                 </p>
               </div>
               <div class="card-detail">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" [routerLink]="'/book-detail/' + book.id">
                   detay
                 </button>
               </div>

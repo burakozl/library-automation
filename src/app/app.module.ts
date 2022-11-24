@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditBookComponent } from './pages/admin-panel/edit-book/edit-book.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './pages/footer/footer.component';
     AddBookComponent,
     EditBookComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
