@@ -17,6 +17,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AddBookComponent } from './pages/admin-panel/add-book/add-book.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditBookComponent } from './pages/admin-panel/edit-book/edit-book.component';
+import { HeaderComponent } from './pages/header/header.component';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { EditBookComponent } from './pages/admin-panel/edit-book/edit-book.compo
     HomeComponent,
     AdminPanelComponent,
     AddBookComponent,
-    EditBookComponent
+    EditBookComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

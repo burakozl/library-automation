@@ -1,1 +1,76 @@
-<p>home works!</p>
+<app-header (searchTextChanged)="onSearchTextEntered($event)"></app-header>
+<section class="wrapper">
+  <div class="container-fostrap">
+    <div class="content">
+      <div class="container">
+        <div class="row" *ngIf="categaryName === 'all'">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books">
+            <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
+              <a class="img-card">
+                <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{book.bookName}}
+                </h4>
+                <p class="card-description">
+                  {{book.aboutTheBook}}
+                </p>
+              </div>
+              <div class="card-detail">
+                <button class="btn btn-primary">
+                  detay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="categaryName === 'novel'">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of novelBooks">
+            <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
+              <a class="img-card">
+                <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{book.bookName}}
+                </h4>
+                <p class="card-description">
+                  {{book.aboutTheBook}}
+                </p>
+              </div>
+              <div class="card-detail">
+                <button class="btn btn-primary">
+                  detay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="categaryName === 'child'">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of childBooks">
+            <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
+              <a class="img-card">
+                <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{book.bookName}}
+                </h4>
+                <p class="card-description">
+                  {{book.aboutTheBook}}
+                </p>
+              </div>
+              <div class="card-detail">
+                <button class="btn btn-primary">
+                  detay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
