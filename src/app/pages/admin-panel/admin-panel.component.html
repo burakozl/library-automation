@@ -38,10 +38,10 @@
             <td>{{book.shelfNumber}}</td>
             <td>{{book.category}}</td>
             <td>
-              <a routerLink="/edit" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
-                  title="Edit">&#xE254;</i></a>
-              <a routerLink="/delete" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"
-                  title="Delete">&#xE872;</i></a>
+              <a [routerLink]="'/edit-book/' + book.id" class="btn edit" data-toggle="modal"><i class="material-icons"
+                  data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+              <a (click)="delete(book.id,book.bookName)" class="btn delete" data-toggle="modal"><i
+                  class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
           </tr>
         </tbody>

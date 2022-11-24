@@ -1,31 +1,31 @@
 <div class="container mt-4">
   <div class="card">
-    <div class="card-body">
+    <div *ngIf="book" class="card-body">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="py-3 text-center font-bold font-up">Kitap Ekle</h2>
+          <h2 class="py-3 text-center font-bold font-up">Kitap Güncelle</h2>
         </div>
       </div>
-      <form [formGroup]="addBookForm">
+      <form [formGroup]="editBookForm">
         <div class="row">
           <div class="col-12">
             <div class="row mx-4">
               <div class="col-12 mb-2">
-                <label class="add-form-label">Kitap Adı</label>
+                <label class="edit-form-label">Kitap Adı</label>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="add-form-input" formControlName="bookName" placeholder="Kitap adı">
+                <input class="edit-form-input" formControlName="bookName" placeholder="Kitap adı">
                 <div>
                   <small
-                    *ngIf="addBookForm.get('bookName')?.hasError('required') && addBookForm.controls['bookName'].touched">
+                    *ngIf="editBookForm.get('bookName')?.hasError('required') && editBookForm.controls['bookName'].touched">
                     Kitap adı alanı zorunludur</small>
                 </div>
               </div>
               <div class="col-12 col-sm-6 mt-2 mt-sm-0">
-                <input class="add-form-input" formControlName="author" placeholder="Yazar">
+                <input class="edit-form-input" formControlName="author" placeholder="Yazar">
                 <div>
                   <small
-                    *ngIf="addBookForm.get('author')?.hasError('required') && addBookForm.controls['author'].touched">Yazar
+                    *ngIf="editBookForm.get('author')?.hasError('required') && editBookForm.controls['author'].touched">Yazar
                     alanı zorunludur</small>
                 </div>
               </div>
@@ -33,32 +33,33 @@
 
             <div class="row mt-3 mx-4">
               <div class="col-12">
-                <label class="add-form-label">Kitap Hakkında</label>
+                <label class="edit-form-label">Kitap Hakkında</label>
               </div>
               <div class="col-12">
-                <textarea class="add-form-input" formControlName="aboutTheBook" placeholder="Kitap hakkında"></textarea>
+                <textarea class="edit-form-input" formControlName="aboutTheBook"
+                  placeholder="Kitap hakkında"></textarea>
                 <div>
                   <small
-                    *ngIf="addBookForm.get('aboutTheBook')?.hasError('required') && addBookForm.controls['aboutTheBook'].touched">Kitap
+                    *ngIf="editBookForm.get('aboutTheBook')?.hasError('required') && editBookForm.controls['aboutTheBook'].touched">Kitap
                     hakkında
                     alanı zorunludur</small>
                 </div>
               </div>
               <div class="col-12 col-sm-6 mt-2 pr-sm-2">
-                <input class="add-form-input" formControlName="barcodeNumber" type="number"
+                <input class="edit-form-input" formControlName="barcodeNumber" type="number"
                   placeholder="Barkod Numarası">
                 <div>
                   <small
-                    *ngIf="addBookForm.get('barcodeNumber')?.hasError('required') && addBookForm.controls['barcodeNumber'].touched">Barkod
+                    *ngIf="editBookForm.get('barcodeNumber')?.hasError('required') && editBookForm.controls['barcodeNumber'].touched">Barkod
                     numarası
                     alanı zorunludur</small>
                 </div>
               </div>
               <div class="col-12 col-sm-6 mt-2 pl-sm-0">
-                <input class="add-form-input" formControlName="shelfNumber" placeholder="Raf numarası">
+                <input class="edit-form-input" formControlName="shelfNumber" placeholder="Raf numarası">
                 <div>
                   <small
-                    *ngIf="addBookForm.get('shelfNumber')?.hasError('required') && addBookForm.controls['shelfNumber'].touched">Raf
+                    *ngIf="editBookForm.get('shelfNumber')?.hasError('required') && editBookForm.controls['shelfNumber'].touched">Raf
                     numarası
                     alanı zorunludur</small>
                 </div>
@@ -67,21 +68,21 @@
 
             <div class="row mx-4">
               <div class="col-12 mb-2">
-                <label class="add-form-label">Kategori</label>
+                <label class="edit-form-label">Kategori</label>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="add-form-input" formControlName="category" placeholder="Kategori">
+                <input class="edit-form-input" formControlName="category" placeholder="Kategori">
                 <div>
                   <small
-                    *ngIf="addBookForm.get('category')?.hasError('required') && addBookForm.controls['category'].touched">
+                    *ngIf="editBookForm.get('category')?.hasError('required') && editBookForm.controls['category'].touched">
                     Kategori alanı zorunludur</small>
                 </div>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="add-form-input" formControlName="imageId" placeholder="imageID">
+                <input class="edit-form-input" formControlName="imageId" placeholder="imageID">
                 <div>
                   <small
-                    *ngIf="addBookForm.get('imageId')?.hasError('required') && addBookForm.controls['imageId'].touched">image
+                    *ngIf="editBookForm.get('imageId')?.hasError('required') && editBookForm.controls['imageId'].touched">image
                     id
                     alanı zorunludur</small>
                 </div>
@@ -91,13 +92,17 @@
             <div class="row mt-3">
               <div class="col-12">
                 <button type="button" id="btnSubmit" class="btn btn-success d-block mx-auto btn-submit"
-                  (click)="addBook()">Kitap
-                  Ekle</button>
+                  (click)="updateBook()">Kitap Güncelle</button>
               </div>
             </div>
           </div>
         </div>
       </form>
+    </div>
+    <div class="card-body" *ngIf="!book">
+
+      <p class="display-6 d-flex justify-content-center">{{this.bookId}} id'li bir kitap kütüphane sisteminizde
+        bulunamadı...</p>
     </div>
   </div>
 </div>

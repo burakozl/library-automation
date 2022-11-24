@@ -1,16 +1,16 @@
-.add-form .container {
+.edit-form .container {
   color: #4c4c4c;
   padding: 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
 
-.add-form-label {
+.edit-form-label {
   margin: 8px 0 0 0;
   font-size: 14px;
   font-weight: bold;
 }
 
-.add-form-input {
+.edit-form-input {
   width: 100%;
   padding: 12px 12px;
   border-width: 1px !important;

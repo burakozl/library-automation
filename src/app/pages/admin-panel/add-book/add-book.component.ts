@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BooksService } from 'src/app/services/books.service';
 
 
@@ -16,6 +17,7 @@ export class AddBookComponent implements OnInit {
   constructor(
     private formBuilder:FormBuilder,
     private booksService:BooksService,
+    private toastr:ToastrService,
     private router:Router
   ) { }
 
@@ -40,11 +42,14 @@ export class AddBookComponent implements OnInit {
 
 
   addBook(){
-    console.log(this.addBookForm);
+    if(this.addBookForm.valid){
+      this.booksService.createBook(this.addBookForm.value).subscribe((res) => {
+        this.router.navigateByUrl('/admin-panel');
+      });
+    }else{
+      this.toastr.error("Lütfen tüm alanların istenilen şekilde doldurulduğundan emin olun.","Sistem Mesajı");
+    }
 
-    this.booksService.createBook(this.addBookForm.value).subscribe((res) => {
-      this.router.navigateByUrl('/admin-panel');
-    })
   }
 
 }

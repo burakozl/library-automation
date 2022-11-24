@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Book } from '../models/book';
 
@@ -13,15 +14,23 @@ export class BooksService {
     private httpClient:HttpClient
   ) { }
 
-  createBook(book:Book){
+  createBook(book:Book): Observable<Book>{
     return this.httpClient.post<Book>(`${this.controllerUrl}`,book);
   }
 
-  getBooks(){
+  getBooks(): Observable<Book[]>{
     return this.httpClient.get<Book[]>(`${this.controllerUrl}`);
   }
 
-  getBook(barcodeNumber:number){
-    return this.httpClient.get<Book[]>(`${this.controllerUrl}?barcodeNumber=`+barcodeNumber);//query param ile varsa ilgili Book get et...
+  getBook(bookId:number): Observable<Book>{
+    return this.httpClient.get<Book>(`${this.controllerUrl}/${bookId}`);//gelen id'ye göre kitabı get et...
+  }
+
+  updateBook(book: Book): Observable<Book> {
+    return this.httpClient.put<Book>(`${this.controllerUrl}/${book.id}`,book);
+  }
+
+  delete(bookId: number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.controllerUrl}/${bookId}`);
   }
 }
