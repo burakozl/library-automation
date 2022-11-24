@@ -1,5 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { deleteBooksCartModel, setBooksCartModel } from './cart.actions';
+import { Action } from 'rxjs/internal/scheduler/Action';
+import { deleteBooksCartModel, deleteOneBookCartModel, setBooksCartModel } from './cart.actions';
 import { CartStoreState, initialCartStoreState } from './cart.state';
 
 export const cartReducer = createReducer<CartStoreState>(
@@ -13,6 +14,12 @@ export const cartReducer = createReducer<CartStoreState>(
       };
     }
   ),
+  on(deleteOneBookCartModel, (currentState,action) => {
+    return {
+      ...currentState,
+      booksCartModel: currentState.booksCartModel.filter(item => item.id != action.id)
+    };
+  }),
   on(deleteBooksCartModel, (currentState) => {
     return {
       ...currentState,
