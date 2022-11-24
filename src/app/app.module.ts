@@ -20,6 +20,7 @@ import { EditBookComponent } from './pages/admin-panel/edit-book/edit-book.compo
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
+import { BooksCartComponent } from './pages/books-cart/books-cart.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BookDetailComponent } from './pages/book-detail/book-detail.component';
     EditBookComponent,
     HeaderComponent,
     FooterComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    BooksCartComponent
   ],
   imports: [
     BrowserModule,

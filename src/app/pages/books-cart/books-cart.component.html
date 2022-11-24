@@ -1,0 +1,58 @@
+<app-header></app-header>
+<section class="mt-5">
+  <div class="container">
+    <div class="cart" *ngIf="cartItems.length > 0">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="text-white">Kitap Resmi</th>
+              <th scope="col" class="text-white">Kitap Adı</th>
+              <th scope="col" class="text-white">Yazar</th>
+              <th scope="col" class="text-white">Ödünç Alma Tarihi</th>
+              <th scope="col" class="text-white">Teslim Tarihi</th>
+              <th scope="col" class="text-white"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems;let i = index">
+              <td>
+                <div class="main">
+                  <div class="d-flex">
+                    <img [src]="'assets/books/book-image'+item.imageId+'.jpg'" alt="" width="145" height="98">
+                  </div>
+                </div>
+              </td>
+              <td>
+                <h6>{{ item.bookName }}</h6>
+              </td>
+              <td>
+                <h6>{{ item.author }}</h6>
+              </td>
+              <td>
+                <h6>{{item.fromDate}}</h6>
+              </td>
+              <td>
+                <h6>{{item.toDate}}</h6>
+              </td>
+              <td>
+                <a (click)="deleteOrder(item.id,item.bookName)" class="btn delete" data-toggle="modal"><i
+                    class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="display-6 d-flex justify-content-center" *ngIf="cartItems.length == 0">
+      Sepetinizde kitap bulunmamaktadır
+    </p>
+  </div>
+</section>
+<div class="col-lg-4 offset-lg-4" *ngIf="cartItems.length > 0">
+  <div class="checkout">
+    <a class="proceed-btn" (click)="completeOrder()">Ödünç Al</a>
+  </div>
+</div>
+<app-footer></app-footer>
