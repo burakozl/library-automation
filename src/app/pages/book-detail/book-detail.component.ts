@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/services/books.service';
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-book-detail',
@@ -17,11 +18,13 @@ export class BookDetailComponent implements OnInit {
   hoveredDate: NgbDate | null = null;
 	fromDate: NgbDate;
 	toDate: NgbDate | null = null;
+  convertedtoDate!:string;
 
   constructor(
     private booksService:BooksService,
     private route:ActivatedRoute, //ilgili id'yi yakalamak için faydalanılacak...
-    private calendar: NgbCalendar
+    private calendar: NgbCalendar,
+    private toastr:ToastrService
   ) {
     this.fromDate = calendar.getToday();
 		this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
@@ -36,8 +39,6 @@ export class BookDetailComponent implements OnInit {
     this.booksService.getBook(id).subscribe((res) => {//book serviceden ilgili json'a get isteği atıp ürünü getir.
       if(res != null){
         this.book = res; //dönen response'u oluşturulan değişkene ata
-        console.log(this.book);
-
       }
     });
   }
@@ -73,5 +74,26 @@ export class BookDetailComponent implements OnInit {
 		);
 	}
 //-- ng-bootstrap date methods end--
+
+  addToCart(){
+    let fromDate = Object.values(this.fromDate);
+    let convertedfromDate = `${fromDate[2]}.${fromDate[1]}.${fromDate[0]}`
+    console.log(convertedfromDate);
+    if(this.toDate != null){
+      let toDate:any[] = Object.values(this.toDate);
+      this.convertedtoDate = `${toDate[2]}.${toDate[1]}.${toDate[0]}`;
+    }else{
+      this.toastr.info("Ödünç alma işlemi için tarih aralığı seçin...");
+      return;
+    }
+
+    const book:any = {
+      ...this.book,
+      fromDate: convertedfromDate,
+      toDate: this.convertedtoDate
+    }
+    this.booksService.saveBookToStore(book);
+    this.toastr.success("Kitap sepete eklendi...");
+  }
 
 }
