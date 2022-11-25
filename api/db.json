@@ -105,6 +105,86 @@
       "category": "Roman",
       "imageId": "8",
       "id": 8
+    },
+    {
+      "bookName": "Şeker Portakalı",
+      "author": "Jose Mauro De Vasconcelos",
+      "aboutTheBook": "“Ne güzel bir şeker portakalı fidanıymış bu! Hem bak, dikeni de yok. Pek de kişilik sahibiymiş, şeker portakalı olduğu ta uzaktan belli. Ben senin boyunda olsaydım başka şey istemezdim.”\n“Ama ben büyük bir ağaç istiyordum.”\n“İyi düşün, Zezé. Henüz gencecik bir fidan bu. Bir gün koca bir ağaca dönüşecek. Seninle beraber büyüyecek. İki kardeş gibi iyi anlaşacaksınız. Dalını gördün mü? Bir tanecik dalı olsa da sanki özellikle senin binmen için hazırlanmış bir ata benziyor.”",
+      "barcodeNumber": 4057475719,
+      "shelfNumber": "9",
+      "category": "Çocuk",
+      "imageId": "9",
+      "id": 9
+    },
+    {
+      "bookName": "Benim Zürafam Uçabilir",
+      "author": "Mert Arık ",
+      "aboutTheBook": "Herkes zürafa resmi çizebilir. Siz de çizebilirsiniz!\nMoni, resim derslerini çok severdi. İlginç şekiller çizmeye ve renklerle oynamaya bayılırdı. Fakat bir gün tuhaf bir şey oldu. Moni resim çizemedi.\nHem de zürafa resmini… Öğretmeni, Moni’yi hayal ettiği her zürafayı çizebileceği konusunda cesaretlendirmeye çalışsa da o ikna olmuyordu.\nAncak öğretmeninin pes etmeye niyeti yoktu. Tabii Moni’nin de… Peki Moni, zürafa resmi çizebildi mi?",
+      "barcodeNumber": 5342553575,
+      "shelfNumber": "10",
+      "category": "Çocuk",
+      "imageId": "10",
+      "id": 10
+    },
+    {
+      "bookName": "Delifişek",
+      "author": "Jose Mauro De Vasconcelos ",
+      "aboutTheBook": "Brezilyalı Jose Mauro de Vasconcelos'un, kendi yaşam kesitlerinden yola çıkarak yazdığı Şeker Portakalı'nı Türkiye'de yediden yetmişe herkes severek okuyor. Romanın kahramanı küçük Zeze, çocukların en yakın dostu; büyüklerin de yüreklerine yerleşmiş bir sevgili çocuk. Şeker Portakalı'nın devamı ve ikinci bölümü olan Güneşi Uyandıralım'daki Zeze biraz daha büyümüş, artık okullu olmuştur. Küçüklüğündeki sevgili dostu, dert ortağı Şeker Portakalı fidanı yoktur, ama bu kez yüreğinde sevimli Kurbağa'sı vardır. Bu dizinin üçüncü bölümü olan Delifişek'te Zeze'yi daha da büyümüş bulacaksınız. ",
+      "barcodeNumber": 9407508353,
+      "shelfNumber": "11",
+      "category": "Çocuk",
+      "imageId": "11",
+      "id": 11
+    },
+    {
+      "bookName": "Pal Sokağı Çocukları",
+      "author": "Ferenc Molnar",
+      "aboutTheBook": "Nemecsek, Boka ve Pál Sokağı’nın öbür çocukları 1907 yılında Budapeşte’nin yoksul Józsefváros semtinden yola çıktılar. Bugün artık bütün dünyada tanınıyorlar. Bugüne kadar her yaştan milyonlarca insan onların dokunaklı hikâyesini okudu; tıpkı Budapeşteli çocuklar gibi onlar da Boka’nın cesaretine hayran oldu, Nemecsek’in ürkek ama kararlı kahramanlığı karşısında gözyaşlarını tutamadı.Şimdi artık Pál Sokağı Çocukları’nın Arsa’sında kocaman çok katlı evler var.\nAma ne gam: Dünyanın bütün çocukları\nPál Sokağı’ndandır!\n",
+      "barcodeNumber": 7416863346,
+      "shelfNumber": "12",
+      "category": "Çocuk",
+      "imageId": "12",
+      "id": 12
+    },
+    {
+      "bookName": "Güneşi Uyandıralım",
+      "author": "Jose Mauro De Vasconcelos ",
+      "aboutTheBook": "Şeker Portakalı'nın sevimli, küçük kahramanı Zeze işte yine karşınızda. Gözlerinin içi yine ışıl ışıl, yüreği yine sevgi dolu. Ama hüzünleri, biraz daha büyümüş bir çocuğun hüzünleri. Küçüklüğündeki küçük Şeker Portakalı yok, ama bu kez de yüreğinde sevgili kurbağası var. Zengin ve aşırı alıngan bir aile tarafından evlat edinilmiş. Ama Zeze yeni babasının iyi niyetine karşılık vermiyor. Evdeki biricik dostu, aşçı Dadada. Bir de düşlerindeki, yeri doldurulamayan, yüreğine kadar sokulup yerleşen kurbağa ve bir filmde görerek gerçek babasının yerine koyduğu ünlü Fransız şarkıcısı Maurice Chevalier.",
+      "barcodeNumber": 3175599160,
+      "shelfNumber": "13",
+      "category": "Çocuk",
+      "imageId": "13",
+      "id": 13
+    },
+    {
+      "bookName": "Uzaya Giden Tren",
+      "author": "Mert Arık",
+      "aboutTheBook": "Benim Zürafam Uçabilir kitabının yazarından yine muhteşem bir macera! \nHayallerinize giden bir trene binmeye hazır mısınız?\n\nÖğretmen, bu sefer de sınıfa bir tren hikâyesi yazma görevi verdi. Bu bir ekip çalışması olacaktı. Moni ve arkadaşları sıra dışı bir tren hikâyesi yazmak için heyecan dolu bir maceraya başladı.\nBu tren Cumburlop Kasabası’na mı gidecekti yoksa Gergedanlar Köyü’ne mi?\nHayır hayır! Treni raydan çıkarma zamanı gelmişti. Çünkü bu tren uzaya gidecekti! \nPeki ama nasıl?",
+      "barcodeNumber": 9179736913,
+      "shelfNumber": "14",
+      "category": "Çocuk",
+      "imageId": "14",
+      "id": 14
+    },
+    {
+      "bookName": "101 Deyim 101 Öykü",
+      "author": "Süleyman Bulut",
+      "aboutTheBook": "101 DEYİM\nÖYKÜSÜNÜ BULDU!\nDeyimler nasıl ortaya\nçıkmıştı, merak ettiniz mi hiç?\nBiliyoruz ki her deyim, mutlaka bir olay sırasında, olayın kahramanlarından biri tarafından kullanıldı. Bugünkü değişmez, değiştirilemez hallerini ise yıllar içinde, kullanıla kullanıla aldı.\n \nYazarımız Süleyman Bulut,\ndeyimlerin ortaya çıkmasını\nsağlayan olayları araştırdı, derledi, topladı ve çocuklar için yeniden kaleme aldı. 101 deyimin birbirinden eğlenceli ve birbirinden ilginç\n101 öyküsü, bu kitapta!",
+      "barcodeNumber": 7871488068,
+      "shelfNumber": "15",
+      "category": "Çocuk",
+      "imageId": "15",
+      "id": 15
+    },
+    {
+      "bookName": "Zaman Bisikleti",
+      "author": "Bilgin Adalı ",
+      "aboutTheBook": "Zaman için dolaşabilen bir bisikletiniz olmasını istemez miydiniz? Bisikletinize atlayıp, eski çağlara kadar gidip dünyamızın ilk günlerinde yaşayan insanları yakından görmek hoşunuza gitmez miydi? Yağmur ile Damla, işte böyle bir Zaman Bisikleti icat eden iki kardeş. Değişik bir bisiklet bu. Babalarıyla birlikte sık sık bisiklete atlayıp eski çağlara gidiyorlar. Günümüzden tüm yüz bin yıl öncesine. Akdeniz'in en güzel kentlerinden biri olan Antalya'nın biraz ötesindeki 'Karain Mağarası'nın yakınında duruyorlar. Orada, bugünkü insanların ataları olan ilk insanları görüyorlar. Çuka ile Anin de bu mağarada yaşayan iki kardeş. ",
+      "barcodeNumber": 9253690098,
+      "shelfNumber": "16",
+      "category": "Çocuk",
+      "imageId": "16",
+      "id": 16
     }
   ],
   "lendBooks": [
