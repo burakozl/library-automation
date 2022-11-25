@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
@@ -22,6 +22,8 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 import { BooksCartComponent } from './pages/books-cart/books-cart.component';
 import { UserBookListComponent } from './pages/user-book-list/user-book-list.component';
+import { LoadingComponent } from './pages/loading/loading.component';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { UserBookListComponent } from './pages/user-book-list/user-book-list.com
     FooterComponent,
     BookDetailComponent,
     BooksCartComponent,
-    UserBookListComponent
+    UserBookListComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,9 @@ import { UserBookListComponent } from './pages/user-book-list/user-book-list.com
     }),
     NgbModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
