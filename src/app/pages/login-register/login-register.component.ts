@@ -87,6 +87,7 @@ export class LoginRegisterComponent implements OnInit {
     const sessionInfo = {
       name: data.name,
       surname: data.surname,
+      email: data.email,
       userRole: data.userRole,
       isLogin:true
     };

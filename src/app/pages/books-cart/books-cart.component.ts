@@ -53,6 +53,7 @@ export class BooksCartComponent implements OnInit {
     const newOrders:any = {
       userName: this.sessionStatus?.name,
       userSurname: this.sessionStatus?.surname,
+      userEmail: this.sessionStatus?.email,
       bookInformation: this.cartItems.map(item => {
         return {
           ...item
