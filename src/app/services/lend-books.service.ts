@@ -23,4 +23,8 @@ export class LendBooksService {
     return this.httpClient.get<LendBooks[]>(`${this.controllerUrl}`);
   }
 
+  delete(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.controllerUrl}/${id}`);
+  }
+
 }
