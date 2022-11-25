@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/services/books.service';
 import { DataTransferService } from 'src/app/services/data-transfer.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +14,13 @@ export class HomeComponent implements OnInit {
   books!:Book[];
   searchText:string = '';
   categaryName:string = 'all';
+  isLoading!:boolean;
   novelBooks!:Book[];
   childBooks!:Book[];
 
   constructor(
     private bookService:BooksService,
+    private loadingService:LoadingService,
     private dataTransferService:DataTransferService//categoriyi yakalayacağımız service import et...
   ) {
     this.dataTransferService.getData().subscribe(x => {
@@ -27,8 +30,26 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.isPageLoading();
+    this.loading();
     this.getBooks();
   }
+
+  isPageLoading() {
+    this.loadingService.isLoadingSubject.subscribe((isLoading) => {
+      this.isLoading = isLoading;
+    });
+  }
+
+  loading() {
+    if (this.books) {
+      this.loadingService.stopLoading();
+
+    } else {
+      this.loadingService.startLoading();
+    }
+  }
+
   getBooks() {
     this.bookService.getBooks().subscribe((res) => {
       this.books = res;

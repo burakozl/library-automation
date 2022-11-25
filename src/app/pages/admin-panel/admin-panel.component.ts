@@ -4,6 +4,7 @@ import { Book } from 'src/app/models/book';
 import { LendBooks } from 'src/app/models/lendBooks';
 import { BooksService } from 'src/app/services/books.service';
 import { LendBooksService } from 'src/app/services/lend-books.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -16,23 +17,45 @@ export class AdminPanelComponent implements OnInit {
   lendBooks!:LendBooks[];
   isClickBookList:boolean = true; // default olarak kitap listesi gösterilecek
   pageTitle:string = "Kitap Listesi";
+  isLoading!: boolean;
   pageSize = 5;
   page = 13;
 
   constructor(
     private booksService:BooksService,
     private lendBooksService:LendBooksService,
+    private loadingService: LoadingService,
     private toastr:ToastrService
   ) { }
 
   ngOnInit(): void {
+    this.isPageLoading();
+    this.loading();
     this.getBooks();
     this.getLendBooks();
   }
 
+  isPageLoading() {
+    this.loadingService.isLoadingSubject.subscribe((isLoading) => {
+      this.isLoading = isLoading;
+    });
+  }
+
+  loading() {
+    if (this.books.length > 0) {
+      this.loadingService.stopLoading();
+      console.log("bu if",this.isLoading);
+
+    } else {
+      this.loadingService.startLoading();
+      console.log("bu else",this.isLoading);
+
+    }
+  }
+
   getBooks() {
     this.booksService.getBooks().subscribe((res) => {
-      this.books = res;
+        this.books = res;
     })
   }
 
