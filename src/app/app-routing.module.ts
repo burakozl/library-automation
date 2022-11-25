@@ -7,6 +7,7 @@ import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 import { BooksCartComponent } from './pages/books-cart/books-cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginRegisterComponent } from './pages/login-register/login-register.component';
+import { UserBookListComponent } from './pages/user-book-list/user-book-list.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: "books-cart",
     component : BooksCartComponent
+  },
+  {
+    path: "user-book-list",
+    component : UserBookListComponent
   },
   {
     path: "admin-panel",

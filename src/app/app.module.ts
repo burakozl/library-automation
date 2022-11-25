@@ -21,6 +21,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 import { BooksCartComponent } from './pages/books-cart/books-cart.component';
+import { UserBookListComponent } from './pages/user-book-list/user-book-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BooksCartComponent } from './pages/books-cart/books-cart.component';
     HeaderComponent,
     FooterComponent,
     BookDetailComponent,
-    BooksCartComponent
+    BooksCartComponent,
+    UserBookListComponent
   ],
   imports: [
     BrowserModule,

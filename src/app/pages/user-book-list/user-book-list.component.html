@@ -1,0 +1,49 @@
+<app-header></app-header>
+<section class="mt-5">
+  <div class="container">
+    <div class="cart">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class="text-white">Kitap Resmi</th>
+              <th scope="col" class="text-white">Kitap Adı</th>
+              <th scope="col" class="text-white">Yazar</th>
+              <th scope="col" class="text-white">Ödünç Alma Tarihi</th>
+              <th scope="col" class="text-white">Teslim Tarihi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let item of userOrder">
+              <tr *ngFor="let item of item.bookInformation;let i = index">
+                <td>
+                  <div class="main">
+                    <div class="d-flex">
+                      <img [src]="'assets/books/book-image'+item.imageId+'.jpg'" alt="" width="145" height="98">
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h6>{{ item.bookName }}</h6>
+                </td>
+                <td>
+                  <h6>{{ item.author }}</h6>
+                </td>
+                <td>
+                  <h6>{{item.fromDate}}</h6>
+                </td>
+                <td>
+                  <h6>{{item.toDate}}</h6>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="display-6 d-flex justify-content-center" *ngIf="userOrder.length == 0">
+      Kitap listenizde ödünç alınmış kitap bulunmamaktadır
+    </p>
+  </div>
+</section>
+<app-footer></app-footer>
