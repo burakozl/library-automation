@@ -79,7 +79,7 @@ export class BooksCartComponent implements OnInit {
       const lendInfo:any = {
         user_email:this.sessionStatus?.email,
         book_barcodeNumber: item.barcodeNumber,
-        deteOfLend: item.fromDate,
+        dateOfLend: item.fromDate,
         bookDeliveryDate: item.toDate
        }
        this.lendBooksService.createLendBooks(lendInfo).subscribe();
