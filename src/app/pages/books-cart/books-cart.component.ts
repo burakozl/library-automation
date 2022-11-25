@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Session } from 'src/app/models/session';
 import { BooksService } from 'src/app/services/books.service';
+import { LendBooksService } from 'src/app/services/lend-books.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { SessionStatusService } from 'src/app/services/session-status.service';
 
@@ -13,11 +14,12 @@ import { SessionStatusService } from 'src/app/services/session-status.service';
 export class BooksCartComponent implements OnInit {
 
   cartItems!:any[];
-  sessionStatus!:Session | null;
+  sessionStatus!:Session;
 
   constructor(
     private booksService:BooksService,
     private localStorageService:LocalStorageService,
+    private lendBooksService:LendBooksService,
     private sessionStatusService:SessionStatusService,
     private toastr:ToastrService
   ) { }
@@ -32,7 +34,7 @@ export class BooksCartComponent implements OnInit {
 
   getUserInfo() {
     this.sessionStatusService.sessionStatusModel$.subscribe((res) => {
-      this.sessionStatus = res;
+      if(res != null) this.sessionStatus = res;
     })
   }
 
@@ -48,6 +50,8 @@ export class BooksCartComponent implements OnInit {
   }
 
   completeOrder(){
+    this.postLendBooks();
+
     let lsOrder:any = localStorage.getItem('lendList');
     let oldOrder = JSON.parse(lsOrder);
     const newOrders:any = {
@@ -68,6 +72,18 @@ export class BooksCartComponent implements OnInit {
 
     this.toastr.success("Ödünç alma işleminiz başarılı bir şekilde tamamlandı...");
     this.booksService.deleteBookToStore();
+  }
+
+  postLendBooks() {
+    this.cartItems.map((item) => {
+      const lendInfo:any = {
+        user_email:this.sessionStatus?.email,
+        book_barcodeNumber: item.barcodeNumber,
+        deteOfLend: item.fromDate,
+        bookDeliveryDate: item.toDate
+       }
+       this.lendBooksService.createLendBooks(lendInfo).subscribe();
+    });
   }
 
 }
