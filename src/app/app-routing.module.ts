@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './guards/admin.guard';
+import { UserGuard } from './guards/user.guard';
 import { AddBookComponent } from './pages/admin-panel/add-book/add-book.component';
 import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 import { EditBookComponent } from './pages/admin-panel/edit-book/edit-book.component';
@@ -13,35 +15,42 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: 'full',
-    redirectTo : 'home'
+    redirectTo : 'home',
   },
   {
     path: "home",
-    component : HomeComponent
+    component : HomeComponent,
+    canActivate:[UserGuard]
   },
   {
     path: "book-detail/:id",
-    component : BookDetailComponent
+    component : BookDetailComponent,
+    canActivate:[UserGuard]
   },
   {
     path: "books-cart",
-    component : BooksCartComponent
+    component : BooksCartComponent,
+    canActivate:[UserGuard]
   },
   {
     path: "user-book-list",
-    component : UserBookListComponent
+    component : UserBookListComponent,
+    canActivate:[UserGuard]
   },
   {
     path: "admin-panel",
-    component : AdminPanelComponent
+    component : AdminPanelComponent,
+    canActivate:[AdminGuard]
   },
   {
     path: "add-book",
-    component : AddBookComponent
+    component : AddBookComponent,
+    canActivate:[AdminGuard]
   },
   {
     path: "edit-book/:id",
-    component : EditBookComponent
+    component : EditBookComponent,
+    canActivate:[AdminGuard]
   },
   {
     path: "login",
