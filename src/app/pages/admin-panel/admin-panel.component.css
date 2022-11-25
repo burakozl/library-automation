@@ -10,6 +10,9 @@ table.table td a.edit {
 table.table td a.delete {
 	color: #F44336;
 }
+.fa-undo {
+	color: #1fad1f;
+}
 table.table td i {
 	font-size: 25px;
 }

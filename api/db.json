@@ -189,25 +189,25 @@
   ],
   "lendBooks": [
     {
-      "id": 1,
-      "user_email": "ali@toplu.com",
-      "book_barcodeNumber": 856987421,
-      "dateOfLend": "22.11.2022",
-      "bookDeliveryDate": "02.12.2022"
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 6433502449,
+      "dateOfLend": "25.11.2022",
+      "bookDeliveryDate": "5.12.2022",
+      "id": 1
     },
     {
       "user_email": "alitoplu@gmail.com",
-      "book_barcodeNumber": 856987421,
-      "deteOfLend": "25.11.2022",
-      "bookDeliveryDate": "2.12.2022",
-      "id": 2
-    },
-    {
-      "user_email": "alitoplu@gmail.com",
-      "book_barcodeNumber": 9407508353,
-      "deteOfLend": "25.11.2022",
-      "bookDeliveryDate": "15.12.2022",
+      "book_barcodeNumber": 4431276519,
+      "dateOfLend": "25.11.2022",
+      "bookDeliveryDate": "5.12.2022",
       "id": 3
+    },
+    {
+      "user_email": "alitoplu@gmail.com",
+      "book_barcodeNumber": 4057475719,
+      "dateOfLend": "25.11.2022",
+      "bookDeliveryDate": "5.12.2022",
+      "id": 4
     }
   ],
   "image-upload": [
