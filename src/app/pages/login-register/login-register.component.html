@@ -1,7 +1,9 @@
 <div class="login-wrap mt-5">
   <div class="login-html">
-    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Giriş Yap</label>
-    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Kayıt Ol</label>
+    <input id="tab-1" type="radio" name="tab" class="sign-in" value="sign-in" [(ngModel)]="selectedRadioButton"
+      (change)="changeTab()" checked><label for="tab-1" class="tab">Giriş Yap</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up" value="sign-up" [(ngModel)]="selectedRadioButton"
+      (change)="changeTab()"><label for="tab-2" class="tab">Kayıt Ol</label>
     <div class="login-form">
       <!-- Giriş Yap -->
       <div class="sign-in-htm">

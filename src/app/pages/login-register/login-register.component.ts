@@ -16,6 +16,7 @@ export class LoginRegisterComponent implements OnInit {
   loginForm!: FormGroup; //kullanıcı girişi için oluşturulacak formgroup
   registerForm!: FormGroup;//kullanıcı kaydı için oluşturulacak formgroup
   users!:User[];//jsondan çekilecek tüm userslar burada tutulacak...
+  selectedRadioButton:string = 'sign-in';
 
   constructor(
     private formBuilder:FormBuilder,//angular form oluşturmak için ilgili servis
@@ -52,6 +53,21 @@ export class LoginRegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
+
+  changeTab(){
+    if(this.selectedRadioButton === 'sign-in'){
+      this.router.navigate(
+        ['/login'],
+        { queryParams: { tabs: 'sign-in' } }
+      );
+    }else{
+      this.router.navigate(
+        ['/login'],
+        { queryParams: { tabs: 'sign-up' } }
+      );
+    }
+  }
+
 
 //Giriş İşlemleri
   login(){

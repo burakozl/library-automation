@@ -23,6 +23,14 @@
       "password": "12312312",
       "userRole": "user",
       "id": 3
+    },
+    {
+      "name": "Furkan",
+      "surname": "Akpolat",
+      "email": "furkan@gmail.com",
+      "password": "12121212",
+      "userRole": "user",
+      "id": 4
     }
   ],
   "books": [
@@ -189,13 +197,6 @@
   ],
   "lendBooks": [
     {
-      "user_email": "b.ozel@gmail.com",
-      "book_barcodeNumber": 6433502449,
-      "dateOfLend": "25.11.2022",
-      "bookDeliveryDate": "5.12.2022",
-      "id": 1
-    },
-    {
       "user_email": "alitoplu@gmail.com",
       "book_barcodeNumber": 4431276519,
       "dateOfLend": "25.11.2022",
@@ -229,6 +230,20 @@
       "dateOfLend": "5.12.2022",
       "bookDeliveryDate": "16.12.2022",
       "id": 7
+    },
+    {
+      "user_email": "furkan@gmail.com",
+      "book_barcodeNumber": 8569874215,
+      "dateOfLend": "26.11.2022",
+      "bookDeliveryDate": "6.12.2022",
+      "id": 8
+    },
+    {
+      "user_email": "furkan@gmail.com",
+      "book_barcodeNumber": 4431276519,
+      "dateOfLend": "30.11.2022",
+      "bookDeliveryDate": "4.12.2022",
+      "id": 9
     }
   ],
   "image-upload": [
