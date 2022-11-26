@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
   showCategory(categoryName:string){
     this.dataTransferService.sendData(categoryName);
     this.clickedCategory = categoryName;
+    this.router.navigateByUrl('/home');
   }
 
   login(){//navbarda bulunnan giriş yap butonu burayı teikler...

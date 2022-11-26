@@ -7,8 +7,8 @@
     <div class="content">
       <div class="container">
         <div class="row" *ngIf="categaryName === 'all'">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books">
-            <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books | filterBooks:searchText">
+            <div class="card">
               <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
               </a>
@@ -29,8 +29,8 @@
           </div>
         </div>
         <div class="row" *ngIf="categaryName === 'novel'">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of novelBooks">
-            <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of novelBooks | filterBooks:searchText">
+            <div class="card">
               <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
               </a>
@@ -51,8 +51,8 @@
           </div>
         </div>
         <div class="row" *ngIf="categaryName === 'child'">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of childBooks">
-            <div class="card" *ngIf="searchText === '' || book.bookName.toLowerCase().includes(searchText)">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of childBooks | filterBooks:searchText">
+            <div class="card">
               <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
               </a>

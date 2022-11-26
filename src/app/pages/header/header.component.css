@@ -40,11 +40,11 @@
 .nav-link,.dropdown-item{
   cursor: pointer;
 }
-.shopingCart{
+.bookCart{
   display: none;
 }
 @media (max-width: 768px) {
-  .shopingCart{
+  .bookCart{
     display: block;
   }
   }

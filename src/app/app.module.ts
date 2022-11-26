@@ -24,6 +24,7 @@ import { BooksCartComponent } from './pages/books-cart/books-cart.component';
 import { UserBookListComponent } from './pages/user-book-list/user-book-list.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { FilterBooksPipe } from './pipes/filter-books.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     BookDetailComponent,
     BooksCartComponent,
     UserBookListComponent,
-    LoadingComponent
+    LoadingComponent,
+    FilterBooksPipe
   ],
   imports: [
     BrowserModule,
