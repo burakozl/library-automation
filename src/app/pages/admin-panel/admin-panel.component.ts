@@ -18,6 +18,8 @@ export class AdminPanelComponent implements OnInit {
   isClickBookList:boolean = true; // default olarak kitap listesi gösterilecek
   pageTitle:string = "Kitap Listesi";
   isLoading!: boolean;
+  searchText!:string;
+  placeholder:string = "Kitap ara..."
   pageSize = 5;
   page = 13;
 
@@ -44,12 +46,8 @@ export class AdminPanelComponent implements OnInit {
   loading() {
     if (this.books.length > 0) {
       this.loadingService.stopLoading();
-      console.log("bu if",this.isLoading);
-
     } else {
       this.loadingService.startLoading();
-      console.log("bu else",this.isLoading);
-
     }
   }
 
@@ -69,12 +67,14 @@ export class AdminPanelComponent implements OnInit {
   bookList(){
     this.isClickBookList = true;
     this.pageTitle = "Kitap Listesi";
+    this.placeholder = "Kitap ara..."
   }
 
 
   userBorrowedBooksList(){
     this.isClickBookList = false;
     this.pageTitle = "Kullanıcı Ödünç Listesi";
+    this.placeholder = "Kulanıcı mail ara..."
   }
 
   delete(id:number,name:string){
@@ -101,5 +101,6 @@ export class AdminPanelComponent implements OnInit {
     this.toastr.success("Teslim alma işleminiz başarılı bir şekilde tamamlandı...");
     this.getLendBooks();
   }
+
 
 }

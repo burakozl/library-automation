@@ -22,7 +22,7 @@
           </button>
         </div>
         <div>
-          <input type="text">
+          <input type="text" placeholder="{{placeholder}}" [(ngModel)]="searchText">
         </div>
       </div>
       <div *ngIf="isClickBookList">
@@ -47,7 +47,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let book of books | slice: (page-1) * pageSize : page * pageSize">
+            <tr *ngFor="let book of books | filterBooks:searchText | slice: (page-1) * pageSize : page * pageSize">
               <th scope="row">{{book.id}}</th>
               <td>{{book.barcodeNumber}}</td>
               <td>{{book.bookName}}</td>
@@ -83,7 +83,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let book of lendBooks | slice: (page-1) * pageSize : page * pageSize">
+            <tr *ngFor="let book of lendBooks | filterUser:searchText | slice: (page-1) * pageSize : page * pageSize">
               <th scope="row">{{book.id}}</th>
               <td>{{book.user_email}}</td>
               <td>{{book.book_barcodeNumber}}</td>
