@@ -29,12 +29,17 @@
         <table class="table">
           <thead style="background-color: #333; color: white;">
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Barkod No</th>
+              <th scope="col" [appSort]="books" data-order="desc" data-name="id">
+                <a class="sort-by">#</a>
+              </th>
+              <th scope="col" [appSort]="books" data-order="desc" data-name="barcodeNumber"><a class="sort-by">
+                  Barkod No</a>
+              </th>
               <th scope="col">Kitap Adı</th>
               <th scope="col">Yazar</th>
               <th scope="col">Kitap Özet</th>
-              <th scope="col">Raf No</th>
+              <th scope="col" [appSort]="books" data-order="desc" data-name="shelfNumber"><a class="sort-by">Raf No</a>
+              </th>
               <th scope="col">Kategori</th>
               <th scope="col">
                 <a routerLink="/add-book" class="btn btn-success" data-toggle="modal">
@@ -74,11 +79,16 @@
         <table class="table">
           <thead style="background-color: #333; color: white;">
             <tr>
-              <th scope="col">#</th>
+              <th scope="col" [appSort]="lendBooks" data-order="desc" data-name="id"><a class="sort-by">#</a></th>
               <th scope="col">Kullanıcı Mail Adresi</th>
-              <th scope="col">Kitap Barkod No</th>
-              <th scope="col">Ödünç Alma Tarihi</th>
-              <th scope="col">Teslim Tarihi</th>
+              <th scope="col" [appSort]="lendBooks" data-order="desc" data-name="book_barcodeNumber"><a
+                  class="sort-by">Kitap Barkod No</a></th>
+              <th scope="col" [appSort]="lendBooks" data-order="desc" data-name="dateOfLend"><a class="sort-by">Ödünç
+                  Alma
+                  Tarihi</a></th>
+              <th scope="col" [appSort]="lendBooks" data-order="desc" data-name="bookDeliveryDate"><a
+                  class="sort-by">Teslim
+                  Tarihi</a></th>
               <th scope="col">Teslim Al</th>
             </tr>
           </thead>

@@ -26,6 +26,7 @@ import { LoadingComponent } from './pages/loading/loading.component';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { FilterBooksPipe } from './pipes/filter-books.pipe';
 import { FilterUserPipe } from './pipes/filter-user.pipe';
+import { SortDirective } from './directives/sort.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FilterUserPipe } from './pipes/filter-user.pipe';
     UserBookListComponent,
     LoadingComponent,
     FilterBooksPipe,
-    FilterUserPipe
+    FilterUserPipe,
+    SortDirective
   ],
   imports: [
     BrowserModule,

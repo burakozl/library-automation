@@ -30,7 +30,7 @@
       "bookName": "Sefiller",
       "author": "Victor Hugo",
       "aboutTheBook": "Yoksul bir köylü çocuğu olan Jan Valjan, küçük yaşta annesini ve babasını kaybetti. Gidecek başka yeri olmadığı için yedi çocukla dul kalan ablasının yanına gitti. Yetim kalan çocuklara babalık, ablasına da yardım etti. Aradan geçen yıllar onu içine kapalı, sessiz, ama güçlü kuvvetli bir delikanlı yapmıştı. Çektiği sıkıntıdan yakınmıyor, yalnızca ablasının ve yedi çocuğunun karnını nasıl doyuracağını düşünüyordu. Bu hiç de kolay değildi maalesef...Jan Valjan''ın elinden her iş gelirdi. Yarıcılık, orakçılık, yanaşmalık ve bağ budayıcılığı... Ama bu işler de her zaman bulunamıyor, işsiz kaldığı zamanlar da oluyordu... Jan Valjan, kışın çok soğuk geçtiği ve kıtlık olduğu o yıl da işsiz kaldı. Kendini düşünmüyordu ama evde bir lokma ekmek bekleyen aç yedi çocuk vardı. Karınlarını doyurabilmek için hiçbir çare bulamayınca sonunda bir fırından ekmek çalmak zorunda kaldı.",
-      "barcodeNumber": 856987421,
+      "barcodeNumber": 8569874215,
       "shelfNumber": 1,
       "category": "Roman",
       "imageId": 1,
@@ -222,6 +222,13 @@
       "dateOfLend": "25.11.2022",
       "bookDeliveryDate": "5.12.2022",
       "id": 6
+    },
+    {
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 9407508353,
+      "dateOfLend": "5.12.2022",
+      "bookDeliveryDate": "16.12.2022",
+      "id": 7
     }
   ],
   "image-upload": [
