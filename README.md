@@ -17,7 +17,7 @@
 
 # Kurulum
 Angular için gerekli kurulum işlemlerini tamamladıktan sonra:
-- [Projeyi](https://github.com/burakozl/Solid-Electron-Final-Case/archive/refs/heads/main.zip) indirdirerek yada [https://github.com/burakozl/Solid-Electron-Final-Case.git](https://github.com/burakozl/Solid-Electron-Final-Case.git) linkini clone'luyarak projeyi bilgisayarınıza aktardıktan sonra gerekli paketleri yüklemek için terminalden **`npm install`** diyerek gerekli paketleri içeren node_modules klasörünü oluşturunuz.
+- [Projeyi](https://github.com/burakozl/library-automation/archive/refs/heads/master.zip) indirdirerek yada [https://github.com/burakozl/library-automation.git](https://github.com/burakozl/library-automation.git) linkini clone'luyarak projeyi bilgisayarınıza aktardıktan sonra gerekli paketleri yüklemek için terminalden **`npm install`** diyerek gerekli paketleri içeren node_modules klasörünü oluşturunuz.
 - Bu projede kullanmış olduğum json-server paketini çalıştımak için yine terminalden **`json-server --watch api/db.json`** komutunu çalıştırınız.(**NOT: Bu komutun çalıştığı terminal açık kalmalı ve proje çalıştığı sürece sonlandırılmamalı `http://localhost:3000/` 'e giderek ilgili json dosyalarını gördüğünüzden emin olun...**)
 - Son olarak yeni bir terminal açarak **`ng serve`** komutu ile projeyi başlatınız.
 
