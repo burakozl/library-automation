@@ -43,9 +43,11 @@
         </table>
       </div>
     </div>
-    <p class="display-6 d-flex justify-content-center" *ngIf="userOrder.length == 0">
-      Kitap listenizde ödünç alınmış kitap bulunmamaktadır
-    </p>
+    <div *ngFor="let item of userOrder">
+      <p class="display-6 d-flex justify-content-center" *ngIf="item.bookInformation.length <= 0">
+        Kitap listenizde ödünç alınmış kitap bulunmamaktadır
+      </p>
+    </div>
   </div>
 </section>
 <app-footer></app-footer>

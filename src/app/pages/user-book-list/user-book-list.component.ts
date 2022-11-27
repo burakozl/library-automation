@@ -30,7 +30,7 @@ export class UserBookListComponent implements OnInit {
     });
     let orders:any = this.localStrogeService.get('lendList');
     this.userBooks = JSON.parse(orders);
-    console.log(this.userBooks);
+    //console.log(this.userBooks);
 
     if(this.userBooks){
       this.userOrder = this.userBooks.filter((item:{userName:string}) => item.userName === this.userInfo.name);
