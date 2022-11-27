@@ -211,5 +211,69 @@
       "id": 16
     }
   ],
-  "lendBooks": []
+  "lendBooks": [
+    {
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 8569874215,
+      "dateOfLend": "9.11.2022",
+      "bookDeliveryDate": "26.11.2022",
+      "id": 1
+    },
+    {
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 9658545328,
+      "dateOfLend": "17.11.2022",
+      "bookDeliveryDate": "29.11.2022",
+      "id": 2
+    },
+    {
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 4431276519,
+      "dateOfLend": "27.11.2022",
+      "bookDeliveryDate": "11.12.2022",
+      "id": 3
+    },
+    {
+      "user_email": "furkan@gmail.com",
+      "book_barcodeNumber": 6433502449,
+      "dateOfLend": "10.11.2022",
+      "bookDeliveryDate": "1.12.2022",
+      "id": 6
+    },
+    {
+      "user_email": "furkan@gmail.com",
+      "book_barcodeNumber": 9179736913,
+      "dateOfLend": "1.12.2022",
+      "bookDeliveryDate": "18.12.2022",
+      "id": 7
+    },
+    {
+      "user_email": "yigitsargin@gmail.com",
+      "book_barcodeNumber": 5429295718,
+      "dateOfLend": "17.11.2022",
+      "bookDeliveryDate": "30.11.2022",
+      "id": 8
+    },
+    {
+      "user_email": "alitoplu@gmail.com",
+      "book_barcodeNumber": 6433502449,
+      "dateOfLend": "1.11.2022",
+      "bookDeliveryDate": "17.11.2022",
+      "id": 9
+    },
+    {
+      "user_email": "alitoplu@gmail.com",
+      "book_barcodeNumber": 9658545328,
+      "dateOfLend": "1.11.2022",
+      "bookDeliveryDate": "16.11.2022",
+      "id": 10
+    },
+    {
+      "user_email": "alitoplu@gmail.com",
+      "book_barcodeNumber": 5429295718,
+      "dateOfLend": "27.11.2022",
+      "bookDeliveryDate": "18.12.2022",
+      "id": 11
+    }
+  ]
 }

@@ -5,6 +5,7 @@ import { LendBooks } from 'src/app/models/lendBooks';
 import { BooksService } from 'src/app/services/books.service';
 import { LendBooksService } from 'src/app/services/lend-books.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-admin-panel',
@@ -20,13 +21,15 @@ export class AdminPanelComponent implements OnInit {
   isLoading!: boolean;
   searchText!:string;
   isOutOfDate!:boolean[];
-  placeholder:string = "Kitap ara..."
+  placeholder:string = "Kitap ara...";
+  lsInfo!:any;
   pageSize = 5;
   page = 13;
 
   constructor(
     private booksService:BooksService,
     private lendBooksService:LendBooksService,
+    private localStorogeService:LocalStorageService,
     private loadingService: LoadingService,
     private toastr:ToastrService
   ) { }
@@ -114,7 +117,29 @@ export class AdminPanelComponent implements OnInit {
     }
   }
 
-  receiveTheBook(id:number){
+  receiveTheBook(id:number,barcodeNumber:number){
+
+    //kitabı local stroge'den silme işlemi
+    let orders:any = this.localStorogeService.get('lendList');
+    this.lsInfo = JSON.parse(orders);
+    //console.log(this.lsInfo);
+
+    this.lsInfo = this.lsInfo.map((item:any) => {
+      return {
+        userName: item.userName,
+        userSurname: item.userSurname,
+        userEmail: item.userEmail,
+        bookInformation: item.bookInformation.filter((info:Book) => {
+          return info.barcodeNumber != barcodeNumber;
+        })
+      }
+    });
+
+    this.localStorogeService.set("lendList",JSON.stringify(this.lsInfo));
+    let ls:any = this.localStorogeService.get("lendList");
+    //console.log("after remove",JSON.parse(ls));
+
+    //ilgili id lendBook'dan silme işlemi
     this.lendBooksService.delete(id).subscribe();
     this.toastr.success("Teslim alma işleminiz başarılı bir şekilde tamamlandı...");
     this.getLendBooks();

@@ -102,8 +102,8 @@
               <td [ngStyle]="{'color':isOutOfDate[i + (page * pageSize) - 5 ] ? 'red' : 'green' }">
                 {{book.bookDeliveryDate}}</td>
               <td>
-                <a (click)="receiveTheBook(book.id)" class="btn delete" data-toggle="modal"><i class="fa fa-undo"
-                    aria-hidden="true"></i></a>
+                <a (click)="receiveTheBook(book.id,book.book_barcodeNumber)" class="btn delete" data-toggle="modal"><i
+                    class="fa fa-undo" aria-hidden="true"></i></a>
               </td>
             </tr>
           </tbody>
