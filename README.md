@@ -32,10 +32,6 @@ Proje başlarken tüm sayfalar Guard'lar ile korunduğu için kullanıcı router
   - Kayıt Ol butonu altında kullanıcının yeni bir hesap oluşturması için gerekli alanlar bulunmaktadır burada yine reactive form yapısı kullanıldı ve inputlar için validasyonlar yapıldı.
   -Kullanıcı daha önceden alınmış bir mail adresi ile hesap oluşturmaya çalışırsa toastr ile 'Girmiş olduğunuz email zaten kayıtlı...' hata mesajı verilerek başka bir mail girmesi istenmektedir ayrıca form valid değilse yine hata mesajı gösterilir ve **kayıt işlemi gerçekleşmez**
   -Tüm şartlar sağlandıktan sonra ilgili yeni kullanıcı bilgileri post edilerek users altına kayıt edilir ve kullanıcı '/home' sayfasına yönlendirilir.
-- **Staging Area**
-  - **Git** tarafından **takip edilen** dosyalar burada bulunur. Gerçek manada **fiziki bir alan değildir**. Dosyalarımızın durumunu belirten hayali bir ortam olarak düşünebiliriz. 
-- **Commit**
-  - Kısaca **Taahhüt** veya **Sözleşme** diyebiliriz. Bir dosyada yaptığımız değişikliklerin kalıcı değişiklikler olduğunun taahhüdünü vermemiz, sözleşmeyi imzalamamız gerekmektedir. Böyle ilgili dosya/dizinde yaptığımız değişiklikler **repository**'mize kaydedilir.
 
 Oluşturulan örnek admin hesabı :
   - Email: admin@etiya.com
