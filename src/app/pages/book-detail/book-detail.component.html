@@ -2,8 +2,9 @@
 <div class="container" *ngIf="book">
   <div class="row my-3 book-detail">
     <div class="col-lg-6 book-image">
-      <img *ngIf="book.imageId <= 16; else elseBlock" [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
-      <ng-template #elseBlock><img [src]="book.imageId"></ng-template>
+      <img *ngIf="book.imageId <= 16; else elseBlock" [src]="'assets/books/book-image'+book.imageId+'.jpg'"
+        width="400px" height="500px" />
+      <ng-template #elseBlock><img [src]="book.imageId" width="400px" height="500px"></ng-template>
     </div>
     <div class="col-lg-6 book-info">
       <h2 class="mb-3">{{book.bookName}}</h2>
