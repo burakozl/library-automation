@@ -19,6 +19,7 @@ export class AdminPanelComponent implements OnInit {
   pageTitle:string = "Kitap Listesi";
   isLoading!: boolean;
   searchText!:string;
+  isOutOfDate!:boolean[];
   placeholder:string = "Kitap ara..."
   pageSize = 5;
   page = 13;
@@ -59,8 +60,25 @@ export class AdminPanelComponent implements OnInit {
 
   getLendBooks(){
     this.lendBooksService.getLendBooks().subscribe((res) => {
-      this.lendBooks = res;
+      if(res != null) this.lendBooks = res;
+      this.compareTheDates();
     })
+  }
+
+  compareTheDates(){//bugünün tarihi ile teslim tarihleri kıyaslanır teslim tarihi geçenler ngstyle ile kırmızı renkte gösterilecek..
+    this.isOutOfDate = this.lendBooks.map((item) => {
+      let convertDate = item.bookDeliveryDate.split('.');
+      let day = convertDate[0];
+      let mounth = convertDate[1];
+      let year = convertDate[2];
+      let date = `${mounth}.${day}.${year}`
+      let today = new Date();
+      if(today > new Date(date)){
+        return true;
+      }else{
+        return false;
+      }
+    });
   }
 
 

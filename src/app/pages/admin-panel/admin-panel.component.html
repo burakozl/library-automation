@@ -93,12 +93,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let book of lendBooks | filterUser:searchText | slice: (page-1) * pageSize : page * pageSize">
+            <tr
+              *ngFor="let book of lendBooks | filterUser:searchText | slice: (page-1) * pageSize : page * pageSize;let i = index">
               <th scope="row">{{book.id}}</th>
               <td>{{book.user_email}}</td>
               <td>{{book.book_barcodeNumber}}</td>
               <td>{{book.dateOfLend}}</td>
-              <td>{{book.bookDeliveryDate}}</td>
+              <td [ngStyle]="{'color':isOutOfDate[i + (page * pageSize) - 5 ] ? 'red' : 'green' }">
+                {{book.bookDeliveryDate}}</td>
               <td>
                 <a (click)="receiveTheBook(book.id)" class="btn delete" data-toggle="modal"><i class="fa fa-undo"
                     aria-hidden="true"></i></a>

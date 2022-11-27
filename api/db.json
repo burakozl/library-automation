@@ -244,6 +244,13 @@
       "dateOfLend": "30.11.2022",
       "bookDeliveryDate": "4.12.2022",
       "id": 9
+    },
+    {
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 6433502449,
+      "dateOfLend": "23.11.2022",
+      "bookDeliveryDate": "25.11.2022",
+      "id": 10
     }
   ],
   "image-upload": [
