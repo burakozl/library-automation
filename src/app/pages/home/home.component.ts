@@ -59,6 +59,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+
   getBooksByCategory(){
     if(this.categaryName === 'novel'){
       this.novelBooks = this.books.filter(item => item.category.toLocaleLowerCase() === 'roman');

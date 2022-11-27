@@ -19,7 +19,9 @@
                 <td>
                   <div class="main">
                     <div class="d-flex">
-                      <img [src]="'assets/books/book-image'+item.imageId+'.jpg'" alt="" width="145" height="98">
+                      <img *ngIf="item.imageId <= 16; else elseBlock"
+                        [src]="'assets/books/book-image'+item.imageId+'.jpg'" width="145" height="98" />
+                      <ng-template #elseBlock><img [src]="item.imageId" width="145" height="98"></ng-template>
                     </div>
                   </div>
                 </td>

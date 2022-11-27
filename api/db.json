@@ -9,12 +9,20 @@
       "userRole": "admin"
     },
     {
+      "id": 2,
+      "name": "Burak",
+      "surname": "Özel",
+      "email": "admin@etiya.com",
+      "password": "admin123",
+      "userRole": "admin"
+    },
+    {
       "name": "Burak",
       "surname": "ÖZEL",
       "email": "b.ozel@gmail.com",
       "password": "12121212",
       "userRole": "user",
-      "id": 2
+      "id": 3
     },
     {
       "name": "Ali",
@@ -22,7 +30,7 @@
       "email": "alitoplu@gmail.com",
       "password": "12312312",
       "userRole": "user",
-      "id": 3
+      "id": 4
     },
     {
       "name": "Furkan",
@@ -30,7 +38,15 @@
       "email": "furkan@gmail.com",
       "password": "12121212",
       "userRole": "user",
-      "id": 4
+      "id": 5
+    },
+    {
+      "name": "Yiğit",
+      "surname": "Sargın",
+      "email": "yigitsargin@gmail.com",
+      "password": "12345678",
+      "userRole": "user",
+      "id": 6
     }
   ],
   "books": [
@@ -251,23 +267,20 @@
       "dateOfLend": "23.11.2022",
       "bookDeliveryDate": "25.11.2022",
       "id": 10
-    }
-  ],
-  "image-upload": [
-    {
-      "id": 1
     },
     {
-      "id": 2
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 7871488068,
+      "dateOfLend": "27.11.2022",
+      "bookDeliveryDate": "7.12.2022",
+      "id": 11
     },
     {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
+      "user_email": "b.ozel@gmail.com",
+      "book_barcodeNumber": 8043517109,
+      "dateOfLend": "27.11.2022",
+      "bookDeliveryDate": "7.12.2022",
+      "id": 12
     }
   ]
 }

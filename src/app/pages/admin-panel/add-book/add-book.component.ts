@@ -13,6 +13,9 @@ import { BooksService } from 'src/app/services/books.service';
 export class AddBookComponent implements OnInit {
 
   addBookForm!: FormGroup;
+  url: any;
+	msg = "";
+  selectedFile!:File;
 
   constructor(
     private formBuilder:FormBuilder,
@@ -40,16 +43,45 @@ export class AddBookComponent implements OnInit {
     })
   }
 
+  selectFile(event:any){
+    if(!event.target.files[0] || event.target.files[0].length == 0) {
+			this.msg = 'Bir resim seçmek zorundasınız...';
+			return;
+		}
+
+		var mimeType = event.target.files[0].type;
+
+		if (mimeType.match(/image\/*/) == null) {
+			this.msg = "Sadece resim dosyaları desteklenmektedir..";
+			return;
+		}
+
+		var reader = new FileReader();
+		reader.readAsDataURL(event.target.files[0]);
+
+		reader.onload = (_event) => {
+			this.msg = "";
+			this.url = reader.result;
+		}
+
+  }
 
   addBook(){
     if(this.addBookForm.valid){
-      this.booksService.createBook(this.addBookForm.value).subscribe((res) => {
+      const addBook = {
+        ...this.addBookForm.value,
+        imageId: this.url //image id değeri base64 olarak atanacak...
+      }
+      this.booksService.createBook(addBook).subscribe((res) => {
         this.router.navigateByUrl('/admin-panel');
       });
     }else{
       this.toastr.error("Lütfen tüm alanların istenilen şekilde doldurulduğundan emin olun.","Sistem Mesajı");
     }
 
+  }
+  goBack(){
+    this.router.navigateByUrl('/admin-panel');
   }
 
 }

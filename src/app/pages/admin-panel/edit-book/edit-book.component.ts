@@ -15,6 +15,8 @@ export class EditBookComponent implements OnInit {
   book!:Book;
   bookId!:number;
   editBookForm!: FormGroup;
+  url: any;
+	msg = "";
 
   constructor(
     private formBuilder:FormBuilder,
@@ -51,6 +53,31 @@ export class EditBookComponent implements OnInit {
     })
   }
 
+  selectFile(event:any){
+    if(!event.target.files[0] || event.target.files[0].length == 0) {
+			this.msg = 'Bir resim seçmek zorundasınız...';
+			return;
+		}
+
+		var mimeType = event.target.files[0].type;
+
+		if (mimeType.match(/image\/*/) == null) {
+			this.msg = "Sadece resim dosyaları desteklenmektedir..";
+			return;
+		}
+
+		var reader = new FileReader();
+		reader.readAsDataURL(event.target.files[0]);
+
+		reader.onload = (_event) => {
+			this.msg = "";
+			this.url = reader.result;
+		}
+
+
+
+  }
+
   updateBook(){
     if(this.editBookForm.invalid){
       this.toastr.error("Lütfen tüm alanların istenilen şekilde doldurulduğundan emin olun.","Sistem Mesajı");
@@ -58,7 +85,8 @@ export class EditBookComponent implements OnInit {
     }
     const editedBook:Book = {
       ...this.editBookForm.value,
-      id: this.bookId
+      id: this.bookId,
+      imageId: this.url ? this.url : this.editBookForm.controls['imageId'].value
     }
     this.booksService.updateBook(editedBook).subscribe({
       next: (res) => {
@@ -73,6 +101,9 @@ export class EditBookComponent implements OnInit {
       },
     })
 
+  }
+  goBack(){
+    this.router.navigateByUrl('/admin-panel');
   }
 
 }

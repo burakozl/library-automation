@@ -70,7 +70,11 @@
                 <label class="add-form-label">Kategori</label>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="add-form-input" formControlName="category" placeholder="Kategori">
+                <select class="add-form-input" formControlName="category">
+                  <option value="Roman">Roman</option>
+                  <option value="Çocuk">Çocuk</option>
+                </select>
+                <!-- <input class="add-form-input" formControlName="category" placeholder="Kategori"> -->
                 <div>
                   <small
                     *ngIf="addBookForm.get('category')?.hasError('required') && addBookForm.controls['category'].touched">
@@ -78,18 +82,24 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="add-form-input" formControlName="imageId" placeholder="imageID">
+                <div style="text-align:center">
+                  <p>
+                    <input class="add-form-input" type="file" (change)="selectFile($event)" formControlName="imageId">
+                  </p>
+                  <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                  <div><img [src]="url" width="50" height="100" *ngIf="url"></div>
+                </div>
                 <div>
                   <small
-                    *ngIf="addBookForm.get('imageId')?.hasError('required') && addBookForm.controls['imageId'].touched">image
-                    id
+                    *ngIf="addBookForm.get('imageId')?.hasError('required') && addBookForm.controls['imageId'].touched">Resim
                     alanı zorunludur</small>
                 </div>
               </div>
             </div>
-
             <div class="row mt-3">
-              <div class="col-12">
+              <div class="d-flex col-12">
+                <button type="button" id="btnBack" class="btn btn-primary d-block mx-auto"
+                  (click)="goBack()">Geri</button>
                 <button type="button" id="btnSubmit" class="btn btn-success d-block mx-auto btn-submit"
                   (click)="addBook()">Kitap
                   Ekle</button>

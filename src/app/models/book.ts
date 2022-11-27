@@ -6,5 +6,5 @@ export interface Book{
   aboutTheBook:string,
   shelfNumber:number,
   category:string,
-  imageId:number
+  imageId:number,
 }

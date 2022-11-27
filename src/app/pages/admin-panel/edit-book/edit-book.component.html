@@ -71,7 +71,11 @@
                 <label class="edit-form-label">Kategori</label>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="edit-form-input" formControlName="category" placeholder="Kategori">
+                <select class="edit-form-input" formControlName="category">
+                  <option value="Roman">Roman</option>
+                  <option value="Çocuk">Çocuk</option>
+                </select>
+                <!-- <input class="edit-form-input" formControlName="category" placeholder="Kategori"> -->
                 <div>
                   <small
                     *ngIf="editBookForm.get('category')?.hasError('required') && editBookForm.controls['category'].touched">
@@ -79,7 +83,17 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6">
-                <input class="edit-form-input" formControlName="imageId" placeholder="imageID">
+                <div style="text-align:center">
+                  <p>
+                    <input class="edit-form-input" type="file" (change)="selectFile($event)" formControlName="imageId">
+                  </p>
+                  <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                  <div><img [src]="url" width="50" height="100" *ngIf="url;else elseBlock"></div>
+                  <ng-template #elseBlock><img
+                      [src]="book.imageId <= 16 ? 'assets/books/book-image'+book.imageId+'.jpg' : book.imageId"
+                      width="50" height="100"></ng-template>
+                </div>
+                <!-- <input class="edit-form-input" formControlName="imageId" placeholder="imageID"> -->
                 <div>
                   <small
                     *ngIf="editBookForm.get('imageId')?.hasError('required') && editBookForm.controls['imageId'].touched">image
@@ -90,7 +104,9 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-12">
+              <div class="d-flex col-12">
+                <button type="button" id="btnBack" class="btn btn-primary d-block mx-auto"
+                  (click)="goBack()">Geri</button>
                 <button type="button" id="btnSubmit" class="btn btn-success d-block mx-auto btn-submit"
                   (click)="updateBook()">Kitap Güncelle</button>
               </div>
