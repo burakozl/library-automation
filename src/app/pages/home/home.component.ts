@@ -75,7 +75,6 @@ export class HomeComponent implements OnInit {
      this.isAvailable = this.books.map((item) => {
       return this.notAvailableBooks.find((book) => item.barcodeNumber === book.barcodeNumber)
      });
-     console.log(this.isAvailable);
 
     });
 
@@ -95,13 +94,10 @@ export class HomeComponent implements OnInit {
   }
 
   getBooksByCategory(){
-    if(this.categaryName === 'novel'){
       this.novelBooks = this.books.filter(item => item.category.toLocaleLowerCase() === 'roman');
-        console.log(this.novelBooks);
-    }else if(this.categaryName === 'child'){
+        //console.log(this.novelBooks);
       this.childBooks = this.books.filter(item => item.category.toLocaleLowerCase() === 'çocuk');
-        console.log(this.childBooks);
-    }
+        //console.log(this.childBooks);
   }
 
   onSearchTextEntered(searchValue:string){

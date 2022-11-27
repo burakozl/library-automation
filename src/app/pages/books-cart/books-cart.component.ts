@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Session } from 'src/app/models/session';
 import { BooksService } from 'src/app/services/books.service';
@@ -21,6 +22,7 @@ export class BooksCartComponent implements OnInit {
     private localStorageService:LocalStorageService,
     private lendBooksService:LendBooksService,
     private sessionStatusService:SessionStatusService,
+    private router:Router,
     private toastr:ToastrService
   ) { }
 
@@ -71,7 +73,8 @@ export class BooksCartComponent implements OnInit {
     console.log(JSON.parse(ls));
 
     this.toastr.success("Ödünç alma işleminiz başarılı bir şekilde tamamlandı...");
-    this.booksService.deleteBookToStore();
+    this.booksService.deleteBookToStore();//sepeti stordan silen metot
+    this.router.navigateByUrl('/user-book-list');
   }
 
   postLendBooks() {

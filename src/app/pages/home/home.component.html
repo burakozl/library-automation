@@ -41,8 +41,18 @@
           </div>
         </div>
         <div class="row" *ngIf="categaryName === 'novel'">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of novelBooks | filterBooks:searchText">
-            <div class="card">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let book of novelBooks | filterBooks:searchText;let i= index">
+            <div class="card" [ngClass]="isAvailable ? { notAvailable: isAvailable[i] } : ''">
+              <div *ngFor="let item of notAvailableBooks">
+                <div class="diamond-container" *ngIf="item.barcodeNumber === book.barcodeNumber">
+                  <div class="diamond">
+                    <div class="diamond-wrapper">
+                      <div class="diamond-content">Müsait Değil</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img *ngIf="book.imageId <= 16; else elseBlock" [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
                 <ng-template #elseBlock><img [src]="book.imageId"></ng-template>
@@ -56,7 +66,8 @@
                 </p>
               </div>
               <div class="card-detail">
-                <button class="btn btn-primary" [routerLink]="'/book-detail/' + book.id">
+                <button [ngClass]="isAvailable ? { disabled: isAvailable[i] } : ''" class="btn btn-primary"
+                  [routerLink]="'/book-detail/' + book.id">
                   detay
                 </button>
               </div>
@@ -64,8 +75,18 @@
           </div>
         </div>
         <div class="row" *ngIf="categaryName === 'child'">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let book of childBooks | filterBooks:searchText">
-            <div class="card">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let book of childBooks | filterBooks:searchText;let i=index">
+            <div class="card" [ngClass]="isAvailable ? { notAvailable: isAvailable[i+novelBooks.length] } : ''">
+              <div *ngFor="let item of notAvailableBooks">
+                <div class="diamond-container" *ngIf="item.barcodeNumber === book.barcodeNumber">
+                  <div class="diamond">
+                    <div class="diamond-wrapper">
+                      <div class="diamond-content">Müsait Değil</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <a class="img-card" [routerLink]="'/book-detail/' + book.id">
                 <img *ngIf="book.imageId <= 16; else elseBlock" [src]="'assets/books/book-image'+book.imageId+'.jpg'" />
                 <ng-template #elseBlock><img [src]="book.imageId"></ng-template>
@@ -79,7 +100,8 @@
                 </p>
               </div>
               <div class="card-detail">
-                <button class="btn btn-primary" [routerLink]="'/book-detail/' + book.id">
+                <button [ngClass]="isAvailable ? { disabled: isAvailable[i+novelBooks.length] } : ''"
+                  class="btn btn-primary" [routerLink]="'/book-detail/' + book.id">
                   detay
                 </button>
               </div>
