@@ -13,7 +13,7 @@
 - [Angular Default Readme](#angular-default-reame)
 
 # Giriş
-  Etiya case kapasamında hazırlamış olduğum kütüphane otomasyon uygulaması... Bu projeyi hazırlarken yeni şeyler öğrendim ve bilgilerimi tazeledim.Projenin çalıştırılmasından başlıyarak sayfa sayfa neler yaptığımı maddeler şeklinde bu dökümanda bulabilirsiniz.
+  Bu projeyi hazırlarken yeni şeyler öğrendim ve bilgilerimi tazeledim.Projenin çalıştırılmasından başlıyarak sayfa sayfa neler yaptığımı maddeler şeklinde bu dökümanda bulabilirsiniz.
 
 # Kurulum
 Angular için gerekli kurulum işlemlerini tamamladıktan sonra:
@@ -32,10 +32,6 @@ Proje başlarken tüm sayfalar Guard'lar ile korunduğu için kullanıcı router
   - Kayıt Ol butonu altında kullanıcının yeni bir hesap oluşturması için gerekli alanlar bulunmaktadır burada yine reactive form yapısı kullanıldı ve inputlar için validasyonlar yapıldı.
   - Kullanıcı daha önceden alınmış bir mail adresi ile hesap oluşturmaya çalışırsa toastr ile 'Girmiş olduğunuz email zaten kayıtlı...' hata mesajı verilerek başka bir mail girmesi istenmektedir ayrıca form valid değilse yine hata mesajı gösterilir ve **kayıt işlemi gerçekleşmez**
   - Tüm şartlar sağlandıktan sonra ilgili yeni kullanıcı bilgileri post edilerek users altına kayıt edilir ve kullanıcı '/home' sayfasına yönlendirilir.
-
-Oluşturulan örnek admin hesabı :
-  - Email: admin@etiya.com
-  - Şifre: admin123
 
 # Home Page
   - Header:
